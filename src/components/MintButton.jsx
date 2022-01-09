@@ -2,7 +2,7 @@ import "./MintButton.sass";
 
 const MintButton = () => {
   return (
-    <div class="MintButton">
+    <div className="MintButton">
       <button>SEND</button>
     </div>
   );

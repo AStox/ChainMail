@@ -16,22 +16,22 @@ const Stamp = () => (
             points="0,-60 -35,0 0,20 35,0"
             fill="none"
             stroke="#0087A3"
-            stroke-width="3px"
+            strokeWidth="3px"
           />
           <polygon
             points="-35,0 0,20 35,0 0,-20"
             fill="none"
             stroke="#0087A3"
-            stroke-width="3px"
+            strokeWidth="3px"
           />
           <polygon
             points="-35,10 0,60 35,10 0,30"
             fill="none"
             stroke="#0087A3"
-            stroke-width="3px"
+            strokeWidth="3px"
           />
         </g>
-        <text class="metadata tiny">
+        <text className="metadata tiny">
           <textPath href="#stamp">
             0x38bcb1f8759441af68703d3aef5a1a8f222218088c1f1a7d1fa0e5030d973c2b
           </textPath>
@@ -49,7 +49,7 @@ const Stamp = () => (
           fill="none"
           d="M -2,25 A 27 27 0 1 0 -2,24.5 z"
           stroke="#0087A3"
-          stroke-width="1"
+          strokeWidth="1"
         />
       </g>
 

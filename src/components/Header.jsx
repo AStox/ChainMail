@@ -1,10 +1,10 @@
 import "./Header.sass";
 
 const Header = () => (
-  <div class="Header">
-    <header class="title">METAVERSAL POST OFFICE</header>
-    <div class="line" />
-    <header class="subtitle">TELEGRAPH</header>
+  <div className="Header">
+    <header className="title">METAVERSAL POST OFFICE</header>
+    <div className="line" />
+    <header className="subtitle">TELEGRAPH</header>
   </div>
 );
 
