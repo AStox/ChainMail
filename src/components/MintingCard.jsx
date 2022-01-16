@@ -10,6 +10,7 @@ import DetailsButton from "./DetailsButton";
 import { NETWORKS, INFURA_ID } from "../constants";
 
 import "./MintingCard.sass";
+import ConnectButton from "./ConnectButton";
 
 const MintingCard = () => {
   const [showDesc, setShowDesc] = useState(false);
@@ -50,6 +51,7 @@ const MintingCard = () => {
       <Card>
         <div style={{ display: "flex", justifyContent: "start" }}>
           <Input label="Cost" value="0.001e" />
+          <ConnectButton />
         </div>
         <div style={{ display: "flex", flexDirection: "row" }}>
           <Header />
