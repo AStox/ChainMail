@@ -1,5 +1,4 @@
 import "./LineInput.sass";
-import { useState } from "react";
 
 const LineInput = ({ value, setValue }) => {
   return (
@@ -9,7 +8,7 @@ const LineInput = ({ value, setValue }) => {
         <input
           type="text"
           value={value}
-          onChange={(e) => setValue(setValue(e.target.value))}
+          onChange={(e) => setValue(e.target.value)}
         />
       </label>
     </div>

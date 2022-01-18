@@ -14,6 +14,7 @@ import ConnectButton from "./ConnectButton";
 
 const MintingCard = () => {
   const [showDesc, setShowDesc] = useState(false);
+  const price = 0.001;
   const [to, setTo] = useState("");
   const [line1, setLine1] = useState("");
   const [line2, setLine2] = useState("");
@@ -72,7 +73,14 @@ const MintingCard = () => {
             <LineInput id="line2" setValue={setLine2} value={line2} />
             <LineInput id="line3" setValue={setLine3} value={line3} />
             <LineInput id="line4" setValue={setLine4} value={line4} />
-            <MintButton />
+            <MintButton
+              price={price}
+              to={to}
+              line1={line1}
+              line2={line2}
+              line3={line3}
+              line4={line4}
+            />
             <DetailsButton />
           </div>
         </div>
