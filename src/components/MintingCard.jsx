@@ -20,6 +20,7 @@ const MintingCard = () => {
   const [line2, setLine2] = useState("");
   const [line3, setLine3] = useState("");
   const [line4, setLine4] = useState("");
+  const [mintStatus, setMintStatus] = useState("");
 
   const [address, setAddress] = useState();
 
@@ -57,11 +58,19 @@ const MintingCard = () => {
         <div style={{ display: "flex", flexDirection: "row" }}>
           <Header />
           <div style={{ flex: "0 0 0", position: "relative" }}>
-            <Stamp />
+            {mintStatus == "Sent" && <Stamp />}
           </div>
         </div>
         <div style={{ display: "flex", justifyContent: "start" }}>
           <Input label="To" placeholder="0x..." setValue={setTo} value={to} />
+        </div>
+        <div style={{ display: "flex", justifyContent: "start" }}>
+          <Input
+            label="Status"
+            placeholder="..."
+            setValue={() => {}}
+            value={mintStatus}
+          />
         </div>
         <div className="horizontal-line" />
         <div className="main-content">
@@ -80,6 +89,7 @@ const MintingCard = () => {
               line2={line2}
               line3={line3}
               line4={line4}
+              setMintStatus={setMintStatus}
             />
             <DetailsButton />
           </div>
