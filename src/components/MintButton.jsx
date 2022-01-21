@@ -91,7 +91,7 @@ const MintButton = ({
 
   return (
     <div className="MintButton">
-      {window.ethereum && <button onClick={mint}>SEND</button>}
+      {window.ethereum && <button onClick={mint}>TRANSMIT</button>}
     </div>
   );
 };
