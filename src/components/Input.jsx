@@ -11,6 +11,9 @@ const Input = ({ label, value, setValue, placeholder }) => (
         value={value}
         onChange={(e) => setValue(e.target.value)}
       />
+      <div style={{ position: "relative", display: "inline" }}>
+        <div className="fade" />
+      </div>
     </label>
   </div>
 );

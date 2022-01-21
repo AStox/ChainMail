@@ -1,9 +1,11 @@
 import "./DetailsButton.sass";
 
-const DetailsButton = () => {
+const DetailsButton = ({ showDetails, setShowDetails }) => {
   return (
     <div className="DetailsButton">
-      <button>What is this?</button>
+      <button onClick={() => setShowDetails(!showDetails)}>
+        {showDetails ? "Send telegraph" : "What is this?"}
+      </button>
     </div>
   );
 };
