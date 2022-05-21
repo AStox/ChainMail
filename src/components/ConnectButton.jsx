@@ -30,7 +30,14 @@ const ConnectButton = () => {
     console.log("uhhhhhh");
     window.ethereum.on("connect", () => {
       console.log("Connected!");
-      connectAccount();
+      provider
+        .listAccounts()
+        .then((result) => {
+          if (result.length > 0) {
+            connectAccount();
+          }
+        })
+        .catch((error) => console.log(error));
     });
     // if (window.ethereum.isConnected) {
     //   // const address = window.ethereum.selectedAddress;
