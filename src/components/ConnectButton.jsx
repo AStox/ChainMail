@@ -27,14 +27,10 @@ const ConnectButton = () => {
       console.log("address");
       return address;
     };
-
+    console.log("uhhhhhh");
     window.ethereum.on("connect", () => {
-      // const address = setAccounts();
-      console.log(address);
-      setAddress(address);
-      getENS(address).then((ensName) =>
-        setAddress(ensName ? ensName : address)
-      );
+      console.log("Connected!");
+      connectAccount();
     });
     // if (window.ethereum.isConnected) {
     //   // const address = window.ethereum.selectedAddress;
@@ -51,9 +47,10 @@ const ConnectButton = () => {
     //     setAddress(ensName ? ensName : address)
     //   );
     // });
-    // window.ethereum.on("disconnect", () => {
-    //   setAddress("");
-    // });
+    window.ethereum.on("disconnect", () => {
+      console.log("goodbye");
+      setAddress("");
+    });
   }, []);
 
   async function getENS(address) {
@@ -72,13 +69,19 @@ const ConnectButton = () => {
     const provider = await detectEthereumProvider();
     if (provider) {
       console.log("Ethereum successfully detected!");
-      const ret = await provider.send("eth_requestAccounts", []);
-      const account = ret.result[0];
-      setAddress((await getENS(account)) || account);
+      connectAccount();
     } else {
       console.error("Please install MetaMask!");
     }
   }
+
+  async function connectAccount() {
+    const ret = await provider.send("eth_requestAccounts", []);
+    console.log(ret);
+    const account = ret.result ? ret.result[0] : ret[0];
+    setAddress((await getENS(account)) || account);
+  }
+
   console.log(address);
 
   const display = address && address.length > 0;
