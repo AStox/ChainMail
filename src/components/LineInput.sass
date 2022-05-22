@@ -3,20 +3,35 @@
     font-family: monospace
     width: 100%
     margin: 0.25rem 0
-    
-
-    .label
-        color: #1B3450
-        font-weight: 500
+    position: relative
 
     .muted
         color: #1B3450
 
-    input
+    textarea
+        all: unset
         width: 90%
         font-weight: 700
         color: #149CA5
+        background-color: #0D141F
         text-align: left
         margin-left: 0.5rem
-        border-bottom: #1B3450 solid 0.1rem
+        border: none
         cursor: auto
+        resize: none
+        line-height: 150%
+        overflow: hidden
+
+    .line-container
+        position: absolute
+        width:95%
+        top: -5px
+        pointer-events: none
+
+    .underline
+        border-bottom: #1B3450 solid 0.1rem
+        color: #1B3450
+        font-weight: 500
+        text-align: left
+        pointer-events: none
+        padding: 9px 0 0 0

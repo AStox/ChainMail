@@ -1,17 +1,16 @@
 import { useEffect, useState } from "react";
-import detectEthereumProvider from "@metamask/detect-provider";
 import Input from "./Input.jsx";
-import ENS, { getEnsAddress, namehash } from "@ensdomains/ensjs";
+import ENS, { getEnsAddress } from "@ensdomains/ensjs";
 import { ethers } from "ethers";
-import MPOAbi from "../ABIs/MPO";
+// import MPOAbi from "../ABIs/MPO";
 // import ENSAddress from '@ensdomains/react-ens-address'
 
 import "./ConnectButton.sass";
 
 const ConnectButton = () => {
   const [address, setAddress] = useState("");
-  const MPOAddress = "0x113d32584D5B95365669b3dd423f3A3e73aBf3eD";
-  let MPOContract;
+  // const MPOAddress = "0x113d32584D5B95365669b3dd423f3A3e73aBf3eD";
+  // let MPOContract;
   let provider;
 
   useEffect(() => {
@@ -20,16 +19,7 @@ const ConnectButton = () => {
   }, [window.ethereum]);
 
   useEffect(() => {
-    const setAccounts = async () => {
-      console.log("!!!!");
-      const address = await provider.send("eth_requestAccounts", []);
-      console.log(address);
-      console.log("address");
-      return address;
-    };
-    console.log("uhhhhhh");
     window.ethereum.on("connect", () => {
-      console.log("Connected!");
       provider
         .listAccounts()
         .then((result) => {
@@ -39,41 +29,33 @@ const ConnectButton = () => {
         })
         .catch((error) => console.log(error));
     });
-    // if (window.ethereum.isConnected) {
-    //   // const address = window.ethereum.selectedAddress;
-
-    //   setAddress(address);
-    //   getENS(address).then((ensName) => {
-    //     setAddress(ensName ? ensName : address);
-    //   });
-    // }
-    // window.ethereum.on("accountsChanged", (accounts) => {
-    //   const address = window.ethereum.selectedAddress;
-    //   setAddress(address);
-    //   getENS(address).then((ensName) =>
-    //     setAddress(ensName ? ensName : address)
-    //   );
-    // });
+    window.ethereum.on("accountsChanged", (accounts) => {
+      provider
+        .listAccounts()
+        .then((result) => {
+          if (result.length > 0) {
+            connectAccount();
+          } else {
+            setAddress("");
+          }
+        })
+        .catch((error) => console.log(error));
+    });
     window.ethereum.on("disconnect", () => {
-      console.log("goodbye");
       setAddress("");
     });
   }, []);
 
   async function getENS(address) {
-    console.log("1");
     const ens = new ENS({
       provider: window.ethereum,
       ensAddress: getEnsAddress("1"),
     });
-    console.log("2");
-    const name = await ens.getName(address);
-    console.log(name);
-    return name.name;
+    const result = await ens.getName(address);
+    return result.name;
   }
 
   async function getProvider() {
-    const provider = await detectEthereumProvider();
     if (provider) {
       console.log("Ethereum successfully detected!");
       connectAccount();
@@ -84,12 +66,9 @@ const ConnectButton = () => {
 
   async function connectAccount() {
     const ret = await provider.send("eth_requestAccounts", []);
-    console.log(ret);
     const account = ret.result ? ret.result[0] : ret[0];
     setAddress((await getENS(account)) || account);
   }
-
-  console.log(address);
 
   const display = address && address.length > 0;
 
