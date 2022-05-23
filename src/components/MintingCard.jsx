@@ -3,7 +3,7 @@ import Card from "./Card";
 import Header from "./Header";
 import Stamp from "./Stamp";
 import Input from "./Input";
-import LineInput from "./LineInput";
+import TextInput from "./TextInput";
 import MintButton from "./MintButton";
 import DetailsButton from "./DetailsButton";
 import Details from "./Details";
@@ -38,7 +38,7 @@ const MintingCard = () => {
 
   function focusNextElement() {
     if (document.activeElement) {
-      var focusable = Array.from(document.querySelectorAll(".LineInput input"));
+      var focusable = Array.from(document.querySelectorAll(".TextInput input"));
       var index = focusable.indexOf(document.activeElement);
       if (index > -1) {
         var nextElement = focusable[index + 1] || focusable[0];
@@ -85,11 +85,11 @@ const MintingCard = () => {
                 <div className="vertical-line" />
               </div>
               <div className="lines-container">
-                <LineInput setValue={setText} value={text} />
-                {/* // <LineInput id="line1" setValue={setLine1} value={line1} />
-                // <LineInput id="line2" setValue={setLine2} value={line2} />
-                // <LineInput id="line3" setValue={setLine3} value={line3} />
-                // <LineInput id="line4" setValue={setLine4} value={line4} /> */}
+                <TextInput setValue={setText} value={text} />
+                {/* // <TextInput id="line1" setValue={setLine1} value={line1} />
+                // <TextInput id="line2" setValue={setLine2} value={line2} />
+                // <TextInput id="line3" setValue={setLine3} value={line3} />
+                // <TextInput id="line4" setValue={setLine4} value={line4} /> */}
                 <MintButton
                   price={price}
                   to={to}

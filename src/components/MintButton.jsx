@@ -18,8 +18,6 @@ const MintButton = ({
   const [provider, setProvider] = useState();
   const [MPOContract, setMPOContract] = useState();
 
-  console.log(price, to, text);
-
   useEffect(() => {
     const _provider = new ethers.providers.Web3Provider(window.ethereum);
     const signer = _provider.getSigner();
@@ -48,8 +46,6 @@ const MintButton = ({
 
   const mint = () => {
     const id = Math.ceil(Math.random() * (2 ** 53 - 1));
-    console.log("ether, ", ethers.utils.parseUnits(price.toString(), "ether"));
-    console.log(id, to, text);
     setMintStatus("Thinking...");
     const mintTx = MPOContract.mint(id, to, text, {
       gasLimit: 51227 + 25 * text.length,
