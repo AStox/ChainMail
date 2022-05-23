@@ -3,7 +3,14 @@ import { useEffect, useState } from "react";
 import { ethers, BigNumber } from "ethers";
 import MPOAbi from "../ABIs/MPO";
 
-const MintButton = ({ price, to, text, setMintStatus }) => {
+const MintButton = ({
+  price,
+  to,
+  text,
+  setMintStatus,
+  setText,
+  sentConfirmation,
+}) => {
   const MPOAddress = "0x9043343c9805824E4aC7Da587C846abc88FB72ED";
   // const [ethers, setEthers] = useState();
   // const [MPOContract, setMPOContract] = useState();
@@ -15,8 +22,9 @@ const MintButton = ({ price, to, text, setMintStatus }) => {
 
   useEffect(() => {
     const _provider = new ethers.providers.Web3Provider(window.ethereum);
+    const signer = _provider.getSigner();
     setProvider(_provider);
-    const _MPOContract = new ethers.Contract(MPOAddress, MPOAbi, provider);
+    const _MPOContract = new ethers.Contract(MPOAddress, MPOAbi, signer);
     setMPOContract(_MPOContract);
   }, [window.ethereum]);
 
@@ -42,7 +50,24 @@ const MintButton = ({ price, to, text, setMintStatus }) => {
     const id = Math.ceil(Math.random() * (2 ** 53 - 1));
     console.log("ether, ", ethers.utils.parseUnits(price.toString(), "ether"));
     console.log(id, to, text);
-    MPOContract.estimateGas.mint(id, to, text).then((res) => console.log(res));
+    setMintStatus("Thinking...");
+    const mintTx = MPOContract.mint(id, to, text, {
+      gasLimit: 51227 + 25 * text.length,
+      value: ethers.utils.parseUnits(price.toString(), "ether"),
+    });
+    mintTx.then((res, err) => {
+      if (!err) {
+        console.log(res);
+        setMintStatus("Transmitting...");
+        res.wait().then((res) => {
+          console.log(res);
+          setText("");
+          sentConfirmation();
+        });
+      } else {
+        console.log(err);
+      }
+    });
     // {
     //   from: provider.listAccounts()[0],
     //   value: ethers.utils.parseUnits(price.toString(), "ether"),
