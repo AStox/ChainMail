@@ -1,6 +1,6 @@
 import "./TextInput.sass";
 
-const TextInput = ({ value, setValue }) => {
+const TextInput = ({ value, setValue, setStatusWithTimeout }) => {
   const lineLength = 30;
   const maxLines = 4;
 
@@ -12,6 +12,8 @@ const TextInput = ({ value, setValue }) => {
     let count = (value.match(/\n/g) || []).length;
     if (count <= maxLines - 1) {
       setValue(value);
+    } else {
+      setStatusWithTimeout("Text too long!");
     }
   }
 

@@ -48,7 +48,7 @@ const MintButton = ({
     const id = Math.ceil(Math.random() * (2 ** 53 - 1));
     setMintStatus("Thinking...");
     const mintTx = MPOContract.mint(id, to, text, {
-      gasLimit: 51227 + 25 * text.length,
+      gasLimit: 51227 + 30 * text.length,
       value: ethers.utils.parseUnits(price.toString(), "ether"),
     });
     mintTx.then((res, err) => {

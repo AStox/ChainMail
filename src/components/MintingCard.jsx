@@ -19,6 +19,7 @@ const MintingCard = () => {
   const [to, setTo] = useState("");
   const [text, setText] = useState("");
   const [mintStatus, setMintStatus] = useState("");
+  const [timeoutId, setTimeoutId] = useState();
 
   const [address, setAddress] = useState();
   const [showDetails, setShowDetails] = useState(false);
@@ -27,6 +28,12 @@ const MintingCard = () => {
     if (event.keyCode === 13) {
       focusNextElement();
     }
+  };
+
+  const setStatusWithTimeout = (text) => {
+    setMintStatus(text);
+    if (timeoutId) clearTimeout(timeoutId);
+    setTimeoutId(setTimeout(() => setMintStatus(""), 5000));
   };
 
   useEffect(() => {
@@ -85,16 +92,19 @@ const MintingCard = () => {
                 <div className="vertical-line" />
               </div>
               <div className="lines-container">
-                <TextInput setValue={setText} value={text} />
-                {/* // <TextInput id="line1" setValue={setLine1} value={line1} />
-                // <TextInput id="line2" setValue={setLine2} value={line2} />
-                // <TextInput id="line3" setValue={setLine3} value={line3} />
-                // <TextInput id="line4" setValue={setLine4} value={line4} /> */}
+                <TextInput
+                  setValue={setText}
+                  value={text}
+                  setStatusWithTimeout={setStatusWithTimeout}
+                />
                 <MintButton
                   price={price}
                   to={to}
                   text={text}
                   setMintStatus={setMintStatus}
+                  setText={setText}
+                  setStatusWithTimeout={setStatusWithTimeout}
+                  sentConfirmation={() => {}}
                 />
               </div>
             </div>
