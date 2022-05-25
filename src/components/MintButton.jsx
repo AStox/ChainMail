@@ -8,7 +8,6 @@ const MintButton = ({
   to,
   text,
   setMintStatus,
-  setText,
   sentConfirmation,
 }) => {
   const MPOAddress = "0x9043343c9805824E4aC7Da587C846abc88FB72ED";
@@ -57,7 +56,6 @@ const MintButton = ({
         setMintStatus("Transmitting...");
         res.wait().then((res) => {
           console.log(res);
-          setText("");
           sentConfirmation();
         });
       } else {

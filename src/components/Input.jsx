@@ -1,12 +1,12 @@
 import "./Input.sass";
 
-const Input = ({ label, value, setValue, placeholder }) => (
+const Input = ({ label, value, setValue, placeholder, className }) => (
   <div className="Input">
     <label className="label">
       {label}
       <input
         type="text"
-        className="input"
+        className={`${className} input`}
         placeholder={placeholder}
         value={value}
         onChange={(e) => setValue(e.target.value)}

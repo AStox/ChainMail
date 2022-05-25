@@ -18,7 +18,7 @@ const Details = () => {
         <span className="subtitle">
           For the low cost of 0.001e + our gas optimized transaction fee, we
           will hand transmit a message straight to the wallet of your choice,
-          where it will immediately be readable to them and the world.
+          where it will immediately be readable to the owner.
         </span>{" "}
       </p>
       <p>

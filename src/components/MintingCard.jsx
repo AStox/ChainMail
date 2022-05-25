@@ -36,6 +36,11 @@ const MintingCard = () => {
     setTimeoutId(setTimeout(() => setMintStatus(""), 5000));
   };
 
+  const sentConfirmation = () => {
+    setText("")
+    setStatusWithTimeout("Transmission Sent")
+  }
+
   useEffect(() => {
     document.addEventListener("keydown", _handleKey);
     return () => {
@@ -67,7 +72,7 @@ const MintingCard = () => {
             <div style={{ display: "flex", flexDirection: "row" }}>
               <Header />
               <div style={{ flex: "0 0 0", position: "relative" }}>
-                {mintStatus == "Sent" && <Stamp />}
+                {mintStatus === "Sent" && <Stamp />}
               </div>
             </div>
             <div style={{ display: "flex", justifyContent: "start" }}>
@@ -84,6 +89,7 @@ const MintingCard = () => {
                 placeholder="..."
                 setValue={() => {}}
                 value={mintStatus}
+                className="status"
               />
             </div>
             <div className="horizontal-line" />
@@ -104,7 +110,7 @@ const MintingCard = () => {
                   setMintStatus={setMintStatus}
                   setText={setText}
                   setStatusWithTimeout={setStatusWithTimeout}
-                  sentConfirmation={() => {}}
+                  sentConfirmation={sentConfirmation}
                 />
               </div>
             </div>
