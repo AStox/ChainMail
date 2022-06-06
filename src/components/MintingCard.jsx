@@ -37,9 +37,9 @@ const MintingCard = () => {
   };
 
   const sentConfirmation = () => {
-    setText("")
-    setStatusWithTimeout("Transmission Sent")
-  }
+    setText("");
+    setStatusWithTimeout("Transmission Sent");
+  };
 
   useEffect(() => {
     document.addEventListener("keydown", _handleKey);
@@ -69,19 +69,14 @@ const MintingCard = () => {
               <Input label="Cost" value="0.001e" />
               <ConnectButton />
             </div>
-            <div style={{ display: "flex", flexDirection: "row" }}>
+            <div style={{ display: "flex" }}>
               <Header />
               <div style={{ flex: "0 0 0", position: "relative" }}>
                 {mintStatus === "Sent" && <Stamp />}
               </div>
             </div>
             <div style={{ display: "flex", justifyContent: "start" }}>
-              <Input
-                label="To"
-                placeholder="0x..."
-                setValue={setTo}
-                value={to}
-              />
+              <Input label="To" placeholder="0x..." setValue={setTo} value={to} />
             </div>
             <div style={{ display: "flex", justifyContent: "start" }}>
               <Input
@@ -116,10 +111,7 @@ const MintingCard = () => {
             </div>
           </>
         )}
-        <DetailsButton
-          showDetails={showDetails}
-          setShowDetails={setShowDetails}
-        />
+        <DetailsButton showDetails={showDetails} setShowDetails={setShowDetails} />
       </Card>
     </div>
   );
