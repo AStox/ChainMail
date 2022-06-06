@@ -22,7 +22,9 @@ const TextInput = ({ value, setValue, setStatusWithTimeout }) => {
       <textarea
         type="textarea"
         value={value}
-        onChange={(e) => updateValue(e.target.value)}
+        onChange={(e) => {updateValue(e.target.value)
+          setStatusWithTimeout("")
+        }}
         rows={maxLines}
         cols={lineLength}
         maxLength={147}
