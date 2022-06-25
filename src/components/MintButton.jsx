@@ -3,14 +3,8 @@ import { useEffect, useState } from "react";
 import { ethers, BigNumber } from "ethers";
 import MPOAbi from "../ABIs/MPO";
 
-const MintButton = ({
-  price,
-  to,
-  text,
-  setMintStatus,
-  sentConfirmation,
-}) => {
-  const MPOAddress = "0x9043343c9805824E4aC7Da587C846abc88FB72ED";
+const MintButton = ({ price, to, text, setMintStatus, sentConfirmation }) => {
+  const MPOAddress = "0x3d7e5ee442051b6b4536ee09613cc913b4cfc943";
   // const [ethers, setEthers] = useState();
   // const [MPOContract, setMPOContract] = useState();
   const [timeoutId, setTimeoutId] = useState();
@@ -31,10 +25,7 @@ const MintButton = ({
         if (error) {
           reject(error);
         } else if (receipt == null) {
-          setTimeout(
-            () => transactionReceiptAsync(resolve, reject),
-            interval ? interval : 500
-          );
+          setTimeout(() => transactionReceiptAsync(resolve, reject), interval ? interval : 500);
         } else {
           resolve(receipt);
         }
@@ -104,9 +95,7 @@ const MintButton = ({
   };
 
   return (
-    <div className="MintButton">
-      {window.ethereum && <button onClick={mint}>TRANSMIT</button>}
-    </div>
+    <div className="MintButton">{window.ethereum && <button onClick={mint}>TRANSMIT</button>}</div>
   );
 };
 
