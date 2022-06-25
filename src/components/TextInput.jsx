@@ -1,8 +1,28 @@
+import { useEffect, useRef } from "react";
 import "./TextInput.sass";
 
 const TextInput = ({ value, setValue, setStatusWithTimeout }) => {
+  const textarea = useRef(null);
   const lineLength = 30;
   const maxLines = 4;
+
+  useEffect(() => {
+    window.addEventListener("keyup", handleUserKeyPress);
+
+    return () => {
+      window.removeEventListener("keyup", handleUserKeyPress);
+    };
+  }, []);
+
+  const handleUserKeyPress = () => {
+    console.log(textarea.current.scrollTop);
+    textarea.current.scrollTo(0, 0);
+    textarea.current.scrollTop = 0;
+  };
+
+  // useEffect(() => {
+  //   console.log();
+  // }, [textarea.current.selectionStart]);
 
   function updateValue(eventValue) {
     setValue(eventValue);
@@ -11,6 +31,7 @@ const TextInput = ({ value, setValue, setStatusWithTimeout }) => {
   return (
     <div className="TextInput">
       <textarea
+        ref={textarea}
         type="textarea"
         value={value}
         onChange={(e) => {
