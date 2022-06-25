@@ -20,7 +20,7 @@ const TextInput = ({ value, setValue, setStatusWithTimeout }) => {
         rows={maxLines}
         cols={lineLength}
         wrap="hard"
-        maxLength={123}
+        maxLength={121}
       />
       <div className="line-container">
         <div className="underline">{">"}</div>
