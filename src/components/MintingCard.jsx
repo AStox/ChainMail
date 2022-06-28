@@ -81,6 +81,7 @@ const MintingCard = () => {
             <div style={{ display: "flex", justifyContent: "start" }}>
               <Input
                 label="Status"
+                disabled="true"
                 placeholder="..."
                 setValue={() => {}}
                 value={mintStatus}

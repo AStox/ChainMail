@@ -1,13 +1,10 @@
 import "./MintButton.sass";
 import { useEffect, useState } from "react";
-import { ethers, BigNumber } from "ethers";
+import { ethers } from "ethers";
 import MPOAbi from "../ABIs/MPO";
 
 const MintButton = ({ price, to, text, setMintStatus, sentConfirmation }) => {
   const MPOAddress = "0x3d7e5ee442051b6b4536ee09613cc913b4cfc943";
-  // const [ethers, setEthers] = useState();
-  // const [MPOContract, setMPOContract] = useState();
-  const [timeoutId, setTimeoutId] = useState();
   const [provider, setProvider] = useState();
   const [MPOContract, setMPOContract] = useState();
 
@@ -19,20 +16,20 @@ const MintButton = ({ price, to, text, setMintStatus, sentConfirmation }) => {
     setMPOContract(_MPOContract);
   }, [window.ethereum]);
 
-  function getTransactionReceiptMined(txHash, interval) {
-    const transactionReceiptAsync = function (resolve, reject) {
-      provider.eth.getTransactionReceipt(txHash, (error, receipt) => {
-        if (error) {
-          reject(error);
-        } else if (receipt == null) {
-          setTimeout(() => transactionReceiptAsync(resolve, reject), interval ? interval : 500);
-        } else {
-          resolve(receipt);
-        }
-      });
-    };
-    return new Promise(transactionReceiptAsync);
-  }
+  // function getTransactionReceiptMined(txHash, interval) {
+  //   const transactionReceiptAsync = function (resolve, reject) {
+  //     provider.eth.getTransactionReceipt(txHash, (error, receipt) => {
+  //       if (error) {
+  //         reject(error);
+  //       } else if (receipt == null) {
+  //         setTimeout(() => transactionReceiptAsync(resolve, reject), interval ? interval : 500);
+  //       } else {
+  //         resolve(receipt);
+  //       }
+  //     });
+  //   };
+  //   return new Promise(transactionReceiptAsync);
+  // }
 
   const mint = () => {
     const id = Math.ceil(Math.random() * (2 ** 53 - 1));

@@ -1,6 +1,3 @@
-import Telegram from "./components/Telegram";
-import Card from "./components/Card";
-import Stamp from "./components/Stamp";
 import MintingCard from "./components/MintingCard";
 import "normalize.css";
 import "./App.sass";
