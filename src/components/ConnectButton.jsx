@@ -7,43 +7,47 @@ import { ethers } from "ethers";
 
 import "./ConnectButton.sass";
 
-const ConnectButton = () => {
+const ConnectButton = ({ setStatus }) => {
   const [address, setAddress] = useState("");
   // const MPOAddress = "0x113d32584D5B95365669b3dd423f3A3e73aBf3eD";
   // let MPOContract;
   let provider;
 
   useEffect(() => {
-    provider = new ethers.providers.Web3Provider(window.ethereum);
+    if (window.ethereum) {
+      provider = new ethers.providers.Web3Provider(window.ethereum);
+    }
     // MPOContract = new provider.eth.Contract(MPOAbi, MPOAddress);
   }, [window.ethereum]);
 
   useEffect(() => {
-    window.ethereum.on("connect", () => {
-      provider
-        .listAccounts()
-        .then((result) => {
-          if (result.length > 0) {
-            connectAccount();
-          }
-        })
-        .catch((error) => console.log(error));
-    });
-    window.ethereum.on("accountsChanged", (accounts) => {
-      provider
-        .listAccounts()
-        .then((result) => {
-          if (result.length > 0) {
-            connectAccount();
-          } else {
-            setAddress("");
-          }
-        })
-        .catch((error) => console.log(error));
-    });
-    window.ethereum.on("disconnect", () => {
-      setAddress("");
-    });
+    if (window.ethereum) {
+      window.ethereum.on("connect", () => {
+        provider
+          .listAccounts()
+          .then((result) => {
+            if (result.length > 0) {
+              connectAccount();
+            }
+          })
+          .catch((error) => console.log(error));
+      });
+      window.ethereum.on("accountsChanged", (accounts) => {
+        provider
+          .listAccounts()
+          .then((result) => {
+            if (result.length > 0) {
+              connectAccount();
+            } else {
+              setAddress("");
+            }
+          })
+          .catch((error) => console.log(error));
+      });
+      window.ethereum.on("disconnect", () => {
+        setAddress("");
+      });
+    }
   }, []);
 
   async function getENS(address) {
@@ -61,6 +65,8 @@ const ConnectButton = () => {
       connectAccount();
     } else {
       console.error("Please install MetaMask!");
+      setStatus("NO WALLET PROVIDER DETECTED");
+      // TODO: Set "No wallet provider detected" status here!
     }
   }
 
@@ -73,10 +79,15 @@ const ConnectButton = () => {
   const display = address && address.length > 0;
 
   return (
-    <div className="ConnectButton">
-      {display && <Input label="from" value={address} />}
-      {!display && <button onClick={() => getProvider()}> CONNECT </button>}
-    </div>
+    <>
+      {/* {!!window.ethereum && ( */}
+      <div className="ConnectButton">
+        {display && <Input label="from" value={address} />}
+        {!display && <button onClick={() => getProvider()}> CONNECT </button>}
+      </div>
+      {/* )} */}
+      {/* {!window.ethereum && "No wallet provider detected"} */}
+    </>
   );
 };
 

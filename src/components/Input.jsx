@@ -1,7 +1,7 @@
 import "./Input.sass";
 
-const Input = ({ label, value, setValue, placeholder, className }) => (
-  <div className="Input">
+const Input = ({ label, value, setValue, placeholder, className, long }) => (
+  <div className={`Input ${long ? "long" : ""}`}>
     <label className="label">
       {label}
       <input

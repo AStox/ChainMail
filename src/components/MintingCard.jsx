@@ -67,7 +67,7 @@ const MintingCard = () => {
           <>
             <div style={{ display: "flex", justifyContent: "start" }}>
               <Input label="Cost" value="0.001e" />
-              <ConnectButton />
+              <ConnectButton setStatus={setStatusWithTimeout} />
             </div>
             <div style={{ display: "flex" }}>
               <Header />
@@ -81,6 +81,7 @@ const MintingCard = () => {
             <div style={{ display: "flex", justifyContent: "start" }}>
               <Input
                 label="Status"
+                long="true"
                 disabled="true"
                 placeholder="..."
                 setValue={() => {}}

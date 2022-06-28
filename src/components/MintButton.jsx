@@ -9,11 +9,13 @@ const MintButton = ({ price, to, text, setMintStatus, sentConfirmation }) => {
   const [MPOContract, setMPOContract] = useState();
 
   useEffect(() => {
-    const _provider = new ethers.providers.Web3Provider(window.ethereum);
-    const signer = _provider.getSigner();
-    setProvider(_provider);
-    const _MPOContract = new ethers.Contract(MPOAddress, MPOAbi, signer);
-    setMPOContract(_MPOContract);
+    if (window.ethereum) {
+      const _provider = new ethers.providers.Web3Provider(window.ethereum);
+      const signer = _provider.getSigner();
+      setProvider(_provider);
+      const _MPOContract = new ethers.Contract(MPOAddress, MPOAbi, signer);
+      setMPOContract(_MPOContract);
+    }
   }, [window.ethereum]);
 
   // function getTransactionReceiptMined(txHash, interval) {
