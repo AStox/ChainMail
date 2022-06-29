@@ -65,7 +65,14 @@ const MintingCard = () => {
         {showDetails && <Details />}
         {!showDetails && (
           <>
-            <div style={{ display: "flex", justifyContent: "start" }}>
+            <div
+              style={{
+                display: "flex",
+                justifyContent: "space-between",
+                flexWrap: "wrap-reverse",
+                margin: "1vw",
+              }}
+            >
               <Input label="Cost" value="0.001e" />
               <ConnectButton setStatus={setStatusWithTimeout} />
             </div>
@@ -75,10 +82,10 @@ const MintingCard = () => {
                 {mintStatus === "Sent" && <Stamp />}
               </div>
             </div>
-            <div style={{ display: "flex", justifyContent: "start" }}>
+            <div style={{ display: "flex", justifyContent: "start", margin: "1vw" }}>
               <Input label="To" placeholder="0x..." setValue={setTo} value={to} />
             </div>
-            <div style={{ display: "flex", justifyContent: "start" }}>
+            <div style={{ display: "flex", justifyContent: "start", margin: "1vw" }}>
               <Input
                 label="Status"
                 long="true"
@@ -91,7 +98,7 @@ const MintingCard = () => {
             </div>
             <div className="horizontal-line" />
             <div className="main-content">
-              <div style={{ flex: "0 1 auto", width: "20%" }}>
+              <div style={{ flex: "1 1 auto", minWidth: "8vw", maxWidth: "15%" }}>
                 <div className="vertical-line" />
               </div>
               <div className="lines-container">

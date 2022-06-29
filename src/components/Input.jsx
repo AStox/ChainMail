@@ -1,8 +1,8 @@
 import "./Input.sass";
 
-const Input = ({ label, value, setValue, placeholder, className, long }) => (
+const Input = ({ label, value, setValue, placeholder, className, long, disabled }) => (
   <div className={`Input ${long ? "long" : ""}`}>
-    <label className="label">
+    <div className="label">
       {label}
       <input
         type="text"
@@ -10,11 +10,12 @@ const Input = ({ label, value, setValue, placeholder, className, long }) => (
         placeholder={placeholder}
         value={value}
         onChange={(e) => setValue(e.target.value)}
+        disabled={disabled}
       />
       <div style={{ position: "relative", display: "inline" }}>
         <div className="fade" />
       </div>
-    </label>
+    </div>
   </div>
 );
 

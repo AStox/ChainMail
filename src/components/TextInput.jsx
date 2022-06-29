@@ -43,11 +43,21 @@ const TextInput = ({ value, setValue, setStatusWithTimeout }) => {
         wrap="hard"
         maxLength={121}
       />
-      <div className="line-container">
-        <div className="underline">{">"}</div>
-        <div className="underline">{">"}</div>
-        <div className="underline">{">"}</div>
-        <div className="underline">{">"}</div>
+      <div
+        style={{
+          position: "absolute",
+          width: "95%",
+          top: "-5px",
+          left: "1vw",
+          pointerEvents: "none",
+        }}
+      >
+        <div className="line-container">
+          <div className="underline">{">"}</div>
+          <div className="underline">{">"}</div>
+          <div className="underline">{">"}</div>
+          <div className="underline">{">"}</div>
+        </div>
       </div>
     </div>
   );
