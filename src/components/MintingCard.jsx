@@ -70,7 +70,7 @@ const MintingCard = () => {
                 display: "flex",
                 justifyContent: "space-between",
                 flexWrap: "wrap-reverse",
-                margin: "1vw",
+                margin: "0 1vw",
               }}
             >
               <Input label="Cost" value="0.001e" />
@@ -82,10 +82,10 @@ const MintingCard = () => {
                 {mintStatus === "Sent" && <Stamp />}
               </div>
             </div>
-            <div style={{ display: "flex", justifyContent: "start", margin: "1vw" }}>
+            <div style={{ display: "flex", justifyContent: "start", margin: "0 1vw" }}>
               <Input label="To" placeholder="0x..." setValue={setTo} value={to} />
             </div>
-            <div style={{ display: "flex", justifyContent: "start", margin: "1vw" }}>
+            <div style={{ display: "flex", justifyContent: "start", margin: "0 1vw" }}>
               <Input
                 label="Status"
                 long="true"
