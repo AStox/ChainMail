@@ -94,7 +94,13 @@ const MintButton = ({ price, to, text, setMintStatus, sentConfirmation }) => {
   };
 
   return (
-    <div className="MintButton">{window.ethereum && <button onClick={mint}>TRANSMIT</button>}</div>
+    <div className="MintButton">
+      {window.ethereum && (
+        <button onClick={mint}>
+          <p>TRANSMIT</p>
+        </button>
+      )}
+    </div>
   );
 };
 
