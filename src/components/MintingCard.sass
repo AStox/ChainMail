@@ -1,6 +1,31 @@
 .MintingCard
-    max-width: 97vw
-    min-width: 55vw
+    // max-width: 97vw
+    // max-width: 850px
+    // min-width: 55vw
+    margin: 3vw
+
+    .card
+        background-color: #0D141F
+        border-radius: 15px
+        box-shadow: black 0 0 40px
+        display: flex
+        flex-direction: column
+        // width: 100%
+        max-width: 750px
+        margin: auto
+
+    .top-bar
+        display: flex
+        justify-content: space-between
+        flex-wrap: wrap-reverse
+        margin: 0 1vw
+
+        .top-bar-item
+            flex: 1 1 auto
+            max-width: 400px
+
+            &.cost
+                max-width: 300px
 
     .main-content
         display: flex 
@@ -22,5 +47,4 @@
         display: flex
         flex-direction: column
         margin: 1rem 0
-        flex: 1 1 auto
-        width: 70%
+        flex: 0.5 0 auto

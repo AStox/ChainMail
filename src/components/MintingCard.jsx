@@ -61,20 +61,17 @@ const MintingCard = () => {
 
   return (
     <div className="MintingCard">
-      <Card>
+      <div className="card">
         {showDetails && <Details />}
         {!showDetails && (
           <>
-            <div
-              style={{
-                display: "flex",
-                justifyContent: "space-between",
-                flexWrap: "wrap-reverse",
-                margin: "0 1vw",
-              }}
-            >
-              <Input label="Cost" value="0.001e" />
-              <ConnectButton setStatus={setStatusWithTimeout} />
+            <div className="top-bar">
+              <div className="top-bar-item cost">
+                <Input label="Cost" value="0.001e" />
+              </div>
+              <div className="top-bar-item">
+                <ConnectButton setStatus={setStatusWithTimeout} />
+              </div>
             </div>
             <div style={{ display: "flex" }}>
               <Header />
@@ -98,7 +95,7 @@ const MintingCard = () => {
             </div>
             <div className="horizontal-line" />
             <div className="main-content">
-              <div style={{ flex: "1 1 auto", minWidth: "8vw", maxWidth: "15%" }}>
+              <div style={{ flex: "1 1 auto", minWidth: "8vw" }}>
                 <div className="vertical-line" />
               </div>
               <div className="lines-container">
@@ -121,7 +118,7 @@ const MintingCard = () => {
           </>
         )}
         <DetailsButton showDetails={showDetails} setShowDetails={setShowDetails} />
-      </Card>
+      </div>
     </div>
   );
 };

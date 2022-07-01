@@ -46,9 +46,8 @@ const TextInput = ({ value, setValue, setStatusWithTimeout }) => {
       <div
         style={{
           position: "absolute",
-          width: "95%",
+          width: "100%",
           top: "-5px",
-          left: "1vw",
           pointerEvents: "none",
         }}
       >
