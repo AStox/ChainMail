@@ -95,7 +95,7 @@ const MintingCard = () => {
             </div>
             <div className="horizontal-line" />
             <div className="main-content">
-              <div style={{ flex: "1 1 auto", minWidth: "8vw" }}>
+              <div style={{ flex: "1 1 auto" }}>
                 <div className="vertical-line" />
               </div>
               <div className="lines-container">
