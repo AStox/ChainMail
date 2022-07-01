@@ -4,30 +4,19 @@ const Details = () => {
   return (
     <div className="Details">
       <p>
-        <span className="strong">The non-fungible telegraph</span> The
-        metaversal post office is proud to offer you a brand new innovation in
-        metaversal communications.{" "}
-        <span className="subtitle">
-          Leveraging 21st century hashpower, send a non-fungible message to your
-          loved ones from anywhere in the metaverse in femto-seconds!
-        </span>
+        <p className="strong">The non-fungible telegraph</p>
+        Transmitting a message via the Metaversal Post Office's Telegraph mints a dynamically
+        generated SVG telegram to the wallet of your choosing.
       </p>
       <p>
-        <span className="strong">Technology of the future- </span> gas-optimized
-        contracts to minimize the impact on your wallet.{" "}
-        <span className="subtitle">
-          For the low cost of 0.001e + our gas optimized transaction fee, we
-          will hand transmit a message straight to the wallet of your choice,
-          where it will immediately be readable to the owner.
-        </span>{" "}
+        <p className="strong">Technology of the future </p>
+        Our innovative, gas-optimized smart contracts save you wei. The average cost of sending a
+        telegram at a gas price of 50 gwei is only 0.003618 Eth.
       </p>
       <p>
-        <span className="strong2">Have you received a telegraph?</span> Every
-        telegraph comes with our free reply guarantee!
-        <span className="subtitle">
-          Fill in the “reply to” field in your telegraph form in order to burn
-          the original and respond for just the price of transmission!
-        </span>
+        <p className="strong">Have you received a telegraph?</p> Every telegraph comes with our free
+        reply guarantee! When you send a non-fungible telegram, you can choose to burn a telegram
+        you currently hold to offset the 0.001 eth cost.
       </p>
     </div>
   );
