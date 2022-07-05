@@ -1,5 +1,5 @@
 import { useEffect, useState } from "react";
-import Input from "./Input.jsx";
+import Input from "../Input.jsx";
 import ENS, { getEnsAddress } from "@ensdomains/ensjs";
 import { ethers } from "ethers";
 // import MPOAbi from "../ABIs/MPO";

@@ -1,7 +1,7 @@
-import "./MintButton.sass";
+import "../buttons/MintButton.sass";
 import { useEffect, useState } from "react";
 import { ethers } from "ethers";
-import MPOAbi from "../ABIs/MPO";
+import MPOAbi from "../../ABIs/MPO";
 
 const MintButton = ({ price, to, text, setMintStatus, sentConfirmation }) => {
   const MPOAddress = "0x3d7e5ee442051b6b4536ee09613cc913b4cfc943";

@@ -4,14 +4,14 @@ import Header from "./Header";
 import Stamp from "./Stamp";
 import Input from "./Input";
 import TextInput from "./TextInput";
-import MintButton from "./MintButton";
-import DetailsButton from "./DetailsButton";
+import MintButton from "./buttons/MintButton";
+import DetailsButton from "./buttons/DetailsButton";
+import ConnectButton from "./buttons/ConnectButton";
 import Details from "./Details";
-
+import Status from "./Status";
 import { NETWORKS, INFURA_ID } from "../constants";
 
 import "./MintingCard.sass";
-import ConnectButton from "./ConnectButton";
 
 const MintingCard = () => {
   const [showDesc, setShowDesc] = useState(false);
@@ -65,28 +65,20 @@ const MintingCard = () => {
         {showDetails && <Details />}
         {!showDetails && (
           <>
-            <div className="top-bar">
-              <div className="top-bar-item cost">
-                <Input label="Cost" value="0.001e" />
-              </div>
-              <div className="top-bar-item">
-                <ConnectButton setStatus={setStatusWithTimeout} />
-              </div>
-            </div>
             <div style={{ display: "flex" }}>
               <Header />
-              <div style={{ flex: "0 0 0", position: "relative" }}>
+              {/* <div style={{ flex: "0 0 0", position: "relative" }}>
                 {mintStatus === "Sent" && <Stamp />}
-              </div>
+              </div> */}
             </div>
             <div style={{ display: "flex", justifyContent: "start", margin: "0 1vw" }}>
               <Input label="To" placeholder="0x..." setValue={setTo} value={to} />
             </div>
             <div style={{ display: "flex", justifyContent: "start", margin: "0 1vw" }}>
-              <Input
+              <Status
                 label="Status"
                 long="true"
-                disabled="true"
+                disabled={true}
                 placeholder="..."
                 setValue={() => {}}
                 value={mintStatus}
