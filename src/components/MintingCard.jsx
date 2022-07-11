@@ -12,6 +12,8 @@ import Status from "./Status";
 import { NETWORKS, INFURA_ID } from "../constants";
 
 import "./MintingCard.sass";
+import React from "react";
+import Logo from "./Logo";
 
 const MintingCard = () => {
   const [showDesc, setShowDesc] = useState(false);
@@ -24,12 +26,6 @@ const MintingCard = () => {
   const [address, setAddress] = useState();
   const [showDetails, setShowDetails] = useState(false);
 
-  const _handleKey = (event) => {
-    if (event.keyCode === 13) {
-      focusNextElement();
-    }
-  };
-
   const setStatusWithTimeout = (text) => {
     setMintStatus(text);
     if (timeoutId) clearTimeout(timeoutId);
@@ -41,24 +37,6 @@ const MintingCard = () => {
     setStatusWithTimeout("Transmission Sent");
   };
 
-  useEffect(() => {
-    document.addEventListener("keydown", _handleKey);
-    return () => {
-      document.removeEventListener("keydown", _handleKey);
-    };
-  }, []);
-
-  function focusNextElement() {
-    if (document.activeElement) {
-      var focusable = Array.from(document.querySelectorAll(".TextInput input"));
-      var index = focusable.indexOf(document.activeElement);
-      if (index > -1) {
-        var nextElement = focusable[index + 1] || focusable[0];
-        nextElement.focus();
-      }
-    }
-  }
-
   return (
     <div className="MintingCard">
       <div className="card">
@@ -66,7 +44,8 @@ const MintingCard = () => {
         {!showDetails && (
           <>
             <div style={{ display: "flex" }}>
-              <Header />
+              {/* <Header /> */}
+              <Logo />
               {/* <div style={{ flex: "0 0 0", position: "relative" }}>
                 {mintStatus === "Sent" && <Stamp />}
               </div> */}
@@ -77,7 +56,6 @@ const MintingCard = () => {
             <div style={{ display: "flex", justifyContent: "start", margin: "0 1vw" }}>
               <Status
                 label="Status"
-                long="true"
                 disabled={true}
                 placeholder="..."
                 setValue={() => {}}

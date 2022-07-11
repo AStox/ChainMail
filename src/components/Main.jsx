@@ -81,13 +81,13 @@ const Main = () => {
 
   return (
     <div className="Main">
-      {displaySplash && <ConnectBig setDisplaySplash={setDisplaySplash} />}
-      {!displaySplash && (
-        <>
-          <TopBar />
-          <MintingCard />
-        </>
-      )}
+      {/* {displaySplash && <ConnectBig setDisplaySplash={setDisplaySplash} />}
+      {!displaySplash && ( */}
+      <>
+        <TopBar />
+        <MintingCard />
+      </>
+      {/* )} */}
     </div>
   );
 };

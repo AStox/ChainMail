@@ -1,5 +1,5 @@
 import "../buttons/MintButton.sass";
-import { useEffect, useState } from "react";
+import React, { useEffect, useState } from "react";
 import { ethers } from "ethers";
 import MPOAbi from "../../ABIs/MPO";
 
@@ -94,9 +94,9 @@ const MintButton = ({ price, to, text, setMintStatus, sentConfirmation }) => {
   };
 
   return (
-    <div className="MintButton">
+    <div className="MintButton glow text-glow">
       {window.ethereum && (
-        <button onClick={mint}>
+        <button onClick={mint} className="glow">
           <p>TRANSMIT</p>
         </button>
       )}
