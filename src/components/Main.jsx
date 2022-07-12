@@ -6,6 +6,7 @@ import ConnectBig from "./buttons/ConnectBig";
 import "./Main.sass";
 import MintingCard from "./MintingCard";
 import TopBar from "./new-design/TopBar";
+import LogoBar from "./LogoBar";
 
 const Main = () => {
   const [displaySplash, setDisplaySplash] = useState(true);
@@ -83,11 +84,10 @@ const Main = () => {
     <div className="Main">
       {/* {displaySplash && <ConnectBig setDisplaySplash={setDisplaySplash} />}
       {!displaySplash && ( */}
-      <>
-        <TopBar />
-        <MintingCard />
-      </>
-      {/* )} */}
+      {/* <div className="flex-container"> */}
+      <div className="inbox"></div>
+      <div className="outbox"></div>
+      {/* </div> */}
     </div>
   );
 };
