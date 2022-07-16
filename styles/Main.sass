@@ -1,19 +1,41 @@
 .Main
     width: 100%
-    border: 6px solid #B6412A
+    border: 6px solid #c5351d
+    border-radius: 50px
     flex: 1 0 auto
     box-sizing: border-box
     display: flex
     flex-direction: row
+    flex-wrap: wrap
 
-    .inbox
-        // margin: 2vw
-        border-right: 6px solid #B6412A
+    .inbox-container
+        border-right: 6px solid #c5351d
         flex: 1 1 auto
 
-    .outbox
+    .outbox-container
         flex: 1 1 auto
-        width:100%
+        min-width: 520px
+        margin: 20px
+
+    .step
+        text-align: left
+        margin-bottom: -7%
+
     .box-title
-        color: #B6412A
+        // margin-top:3%
+        flex: 1 1 auto
+        color: #c5351d
         width:100%
+        font-size: 150%
+        font-weight: 900
+        letter-spacing: 1rem
+
+    .box-subtitle
+        flex: 1 1 auto
+        color: #c5351d
+        font-size:50%
+        font-weight: 700
+        letter-spacing: 0.12rem
+
+        &.outbox
+            margin-left: 110px

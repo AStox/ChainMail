@@ -3,7 +3,11 @@ import "../styles/App.sass";
 import "../styles/LogoBar.sass";
 import "../styles/Main.sass";
 import "../styles/Inbox.sass";
-import "../styles/CubeEmpty.sass";
+import "../styles/Cubes.sass";
+import "../styles/MintingCard.sass";
+import "../styles/TextInput.sass";
+import "../styles/Input.sass";
+import "../styles/Transmit.sass";
 
 function MyApp({ Component, pageProps }) {
   return <Component {...pageProps} />;

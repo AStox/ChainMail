@@ -16,6 +16,7 @@ const INFURA_ID = process.env.INFURA_ID;
 
 import React from "react";
 import Logo from "./Logo";
+import CubeEmpty from "./CubeEmpty";
 
 const MintingCard = () => {
   const [showDesc, setShowDesc] = useState(false);
@@ -45,17 +46,7 @@ const MintingCard = () => {
         {showDetails && <Details />}
         {!showDetails && (
           <>
-            <div style={{ display: "flex" }}>
-              {/* <Header /> */}
-              <Logo />
-              {/* <div style={{ flex: "0 0 0", position: "relative" }}>
-                {mintStatus === "Sent" && <Stamp />}
-              </div> */}
-            </div>
-            <div style={{ display: "flex", justifyContent: "start", margin: "0 1vw" }}>
-              <Input label="To" placeholder="0x..." setValue={setTo} value={to} />
-            </div>
-            <div style={{ display: "flex", justifyContent: "start", margin: "0 1vw" }}>
+            {/* <div style={{ display: "flex", justifyContent: "start", margin: "0 1vw" }}>
               <Status
                 label="Status"
                 disabled={true}
@@ -64,11 +55,26 @@ const MintingCard = () => {
                 value={mintStatus}
                 className="status"
               />
-            </div>
-            <div className="horizontal-line" />
+            </div> */}
             <div className="main-content">
               <div style={{ flex: "1 1 auto" }}>
-                <div className="vertical-line" />
+                <div className="vertical-line">
+                  <div
+                    style={{
+                      display: "flex",
+                      flexDirection: "column",
+                      margin: "0 1vw 0 0",
+                      padding: "0vw 0 3vw 0",
+                    }}
+                  >
+                    <div style={{ flex: "1 1 auto", alignSelf: "end" }}>
+                      <CubeEmpty />
+                    </div>
+                    <Input label="TELEGRAPH ID" placeholder="0x..." setValue={setTo} value={to} />
+                    <Input label="FROM" placeholder="0x..." setValue={setTo} value={to} />
+                    <Input label="TO" placeholder="0x..." setValue={setTo} value={to} />
+                  </div>
+                </div>
               </div>
               <div className="lines-container">
                 <TextInput
@@ -76,7 +82,7 @@ const MintingCard = () => {
                   value={text}
                   setStatusWithTimeout={setStatusWithTimeout}
                 />
-                <MintButton
+                {/* <MintButton
                   price={price}
                   to={to}
                   text={text}
@@ -84,12 +90,11 @@ const MintingCard = () => {
                   setText={setText}
                   setStatusWithTimeout={setStatusWithTimeout}
                   sentConfirmation={sentConfirmation}
-                />
+                /> */}
               </div>
             </div>
           </>
         )}
-        <DetailsButton showDetails={showDetails} setShowDetails={setShowDetails} />
       </div>
     </div>
   );

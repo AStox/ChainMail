@@ -18,7 +18,6 @@ const TextInput = ({ value, setValue, setStatusWithTimeout }) => {
   }, []);
 
   const handleUserKeyPress = () => {
-    console.log(textarea.current.scrollTop);
     textarea.current.scrollTo(0, 0);
     textarea.current.scrollTop = 0;
   };

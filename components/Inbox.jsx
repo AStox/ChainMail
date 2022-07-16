@@ -53,17 +53,11 @@ const Inbox = () => {
   }, [telegraphs]);
 
   const slots = makeArray();
-  console.log(slots);
   return (
     <div className="Inbox">
-      {Array(4)
-        .fill(0)
-        .map((_, i) => (
-          <div className="inbox-row" key={`row${i}`}>
-            {console.log(slots.slice(i * 3, (i + 1) * 3))}
-            {slots.slice(i * 3, (i + 1) * 3)}
-          </div>
-        ))}
+      <div className="box-title">IN BOX</div>
+      <div className="box-subtitle">YOUR RECEIVED TELEGRAPHS</div>
+      <div className="grid">{slots}</div>
     </div>
   );
 };

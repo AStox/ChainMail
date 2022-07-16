@@ -1,5 +1,5 @@
 .Input
-    margin: 1rem 0 0 1rem
+    margin: 1rem 0 0 0
     text-align: left
     &.status
         width:100%
@@ -9,26 +9,51 @@
             width:100%
 
     .label
-        color: #B6412A
+        color: #c5351d
         font-size: 1.65rem
-        font-family: 'Arial Narrow'
-        font-weight: 700
-        text-shadow: #B6412A95 0 0 2rem
+        text-align: right
+        margin-left: -40%
+        font-weight: 900
+        letter-spacing: 0.2rem
 
-    .input
-        color: #0087A3
-        font-size: 80%
-        font-family: monospace
-        font-weight: 700
-        border-bottom: #B6412A solid 0.2rem
-        max-width: 75%
-        text-align: left
+    .underline
         margin-left: 1rem
-        cursor: auto
-        text-shadow: none
+        // max-width: 75%
+        display: inline
+        &:before 
+            content:''
+            position: relative
+            top: 11.5px
+            background-color: #c5351d
+            height: 6px
+            width: 6px
+            border-radius:10px 0 0 10px
+            content: ""
+            display: inline-block
+        &:after 
+            content:''
+            position: relative
+            top: 11.5px
+            background-color: #c5351d
+            height: 6px
+            width: 6px
+            border-radius:0 10px 10px 0
+            content: ""
+            display: inline-block
 
-        &::placeholder
-            color: #1B3450
+        .input
+            color: #0087A3
+            font-size: 80%
+            font-family: monospace
+            font-weight: 700
+            border-bottom: #c5351d solid 6px
+            text-align: left
+            cursor: auto
+            text-shadow: none
+            
+
+            &::placeholder
+                color: #1B3450
         
     .status
         font-size: 100%

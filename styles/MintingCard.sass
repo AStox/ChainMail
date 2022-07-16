@@ -2,16 +2,12 @@
     // max-width: 97vw
     // max-width: 850px
     // min-width: 55vw
-    margin: 3vw
+    margin-top: 5%
 
     .card
-        // background-color: #0D141F
         border-radius: 15px
-        // box-shadow: black 0 0 40px
         display: flex
         flex-direction: column
-        // width: 100%
-        max-width: 750px
         margin: auto
 
     .top-bar
@@ -30,21 +26,62 @@
     .main-content
         display: flex 
         flex-direction: row
-        margin-bottom: 1rem
 
     .horizontal-line
-        background-color: #B6412A
-        height: 2px
+        // background-color: #c5351d
+        height: 6px
         width: 98%
         margin: 2vw auto  0 auto
+        border-bottom: #c5351d solid 6px
+        &:before 
+            content:''
+            position: relative
+            left: -6px
+            background-color: #c5351d
+            float: left
+            height: 6px
+            width: 6px
+            border-radius:10px 0 0 10px
+        &:after 
+            content:''
+            position: relative
+            left: 6px
+            background-color: #c5351d
+            float: right
+            height: 6px
+            width: 6px
+            border-radius:0 10px 10px 0
+            
 
     .vertical-line
-        height: 90%
         margin: 0.5rem 0
-        border-right: #B6412A solid 2px
+        border-right: #c5351d solid 6px
+        &:before 
+            content:''
+            position: relative
+            top: -6px
+            right: -6px
+            background-color: #c5351d
+            height: 6px
+            width: 6px
+            border-radius:10px 10px 0 0
+            float: right
+            content: ""
+            display: inline-block
+        &:after 
+            content:''
+            position: relative
+            right: -6px
+            background-color: #c5351d
+            height: 6px
+            width: 6px
+            border-radius:0 0 10px 10px
+            float: right
+            content: ""
+            display: inline-block
 
     .lines-container
         display: flex
         flex-direction: column
-        margin: 1rem 0
         flex: 0.5 0 auto
+        margin-right: 9%

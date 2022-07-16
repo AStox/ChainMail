@@ -23,7 +23,6 @@ const ConnectButton = ({ setStatus }) => {
   }, [window?.ethereum]);
 
   useEffect(() => {
-    console.log(window);
     if (window !== undefined) {
       if (window.ethereum) {
         window?.ethereum.on("connect", () => {

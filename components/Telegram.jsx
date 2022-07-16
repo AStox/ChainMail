@@ -22,7 +22,7 @@ const Telegram = () => (
       <rect></rect>
       <g transform="translate(80,40)">
         <text className="title">METAVERSAL POST OFFICE</text>
-        <line x1="17" y1="3" x2="160" y2="3" stroke="#B6412A" />
+        <line x1="17" y1="3" x2="160" y2="3" stroke="#c5351d" />
         <text className="title subtitle" x="35" y="20">
           TELEGRAPH
         </text>
@@ -34,7 +34,7 @@ const Telegram = () => (
         <text className="metadata" x="20" y="0">
           0023
         </text>
-        <line x1="17" y1="3" x2="60" y2="3" stroke="#B6412A" />
+        <line x1="17" y1="3" x2="60" y2="3" stroke="#c5351d" />
       </g>
       <g transform="translate(270,18)">
         <text className="text" x="0" y="0">
@@ -43,18 +43,13 @@ const Telegram = () => (
         <text className="metadata" x="30" y="0">
           1311235
         </text>
-        <line x1="27" y1="3" x2="75" y2="3" stroke="#B6412A" />
+        <line x1="27" y1="3" x2="75" y2="3" stroke="#c5351d" />
       </g>
       <g transform="translate(287,27)">
         <text className="text" x="0" y="5">
           Block Stamp
         </text>
-        <polygon
-          points="0,8 0,53, 55,53, 55,8"
-          fill="none"
-          stroke="#1B3450"
-          stroke-dasharray="3"
-        />
+        <polygon points="0,8 0,53, 55,53, 55,8" fill="none" stroke="#1B3450" stroke-dasharray="3" />
         <g transform="translate(-1,4) scale(1,1)">
           <g transform="translate(25,25) rotate(-30)  scale(0.3,0.3)">
             <polygon
@@ -90,12 +85,7 @@ const Telegram = () => (
               repeatCount="indefinite"
             />
           </text>
-          <path
-            fill="none"
-            d="M -2,25 A 27 27 0 1 0 -2,24.5 z"
-            stroke="#0087A3"
-            stroke-width="1"
-          />
+          <path fill="none" d="M -2,25 A 27 27 0 1 0 -2,24.5 z" stroke="#0087A3" stroke-width="1" />
         </g>
       </g>
       <g transform="translate(0,100)">
@@ -104,7 +94,7 @@ const Telegram = () => (
             Timestamp
           </text>
           <text className="metadata" x="28" y="0"></text>
-          <line x1="50" y1="3" x2="135" y2="3" stroke="#B6412A" />
+          <line x1="50" y1="3" x2="135" y2="3" stroke="#c5351d" />
         </g>
         <g transform="translate(10,-10)">
           <text className="text" x="0" y="0">
@@ -113,11 +103,11 @@ const Telegram = () => (
           <text className="metadata" x="15" y="0">
             0x0ed3...fa4
           </text>
-          <line x1="12" y1="3" x2="100" y2="3" stroke="#B6412A" />
+          <line x1="12" y1="3" x2="100" y2="3" stroke="#c5351d" />
         </g>
         <g transform="translate(0,0)">
-          <line x1="5" y1="0" x2="345" y2="0" stroke="#B6412A" />
-          <line x1="40" y1="0" x2="40" y2="145" stroke="#B6412A" />
+          <line x1="5" y1="0" x2="345" y2="0" stroke="#c5351d" />
+          <line x1="40" y1="0" x2="40" y2="145" stroke="#c5351d" />
           <g transform="translate(55,20)">
             <line x1="0" y1="25" x2="270" y2="25" stroke="#1B3450" />
             <line x1="0" y1="45" x2="270" y2="45" stroke="#1B3450" />
@@ -143,12 +133,10 @@ const Telegram = () => (
             </text>
             <g transform="translate(0,119)">
               <text className="text fineprint" x="0" y="0">
-                FOR ONE FREE RESPONSE TO THIS TELEGRAM, VISIT THE METAVERAL POST
-                OFFICE OR
+                FOR ONE FREE RESPONSE TO THIS TELEGRAM, VISIT THE METAVERAL POST OFFICE OR
               </text>
               <text className="text fineprint" x="0" y="6">
-                WWW.METAVERSALPOST.IO WITH THE WALLET OWNING THIS NON-FUNGIBLE
-                TELEGRAM.
+                WWW.METAVERSALPOST.IO WITH THE WALLET OWNING THIS NON-FUNGIBLE TELEGRAM.
               </text>
             </g>
           </g>

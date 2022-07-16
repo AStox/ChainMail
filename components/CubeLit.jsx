@@ -1,5 +1,5 @@
 const CubeLit = () => {
-  <div className="CubeEmpty"></div>;
+  return <div className="CubeLit"></div>;
 };
 
 export default CubeLit;

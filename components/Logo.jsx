@@ -1,14 +1,27 @@
-import React from "react";
+import React, { useEffect, useState } from "react";
 
 // import "./Logo.sass";
 
 const Logo = () => {
   const ratio = 450 / 2739;
+  const [width, setWidth] = useState(0);
+  useEffect(() => {
+    const updateWindowDimensions = () => {
+      const newWidth = window.innerWidth;
+      setWidth(newWidth);
+      console.log("!!", newWidth, newWidth / 2);
+    };
+
+    window.addEventListener("resize", updateWindowDimensions);
+
+    return () => window.removeEventListener("resize", updateWindowDimensions);
+  }, []);
+
   return (
     <svg
-      width="100%"
-      // height={window.screen.width * ratio}
-      viewBox="0 0 2739 450"
+      // width="100%"
+      // height="250px"
+      viewBox={`0 0 2739 450`}
       version="1.1"
       xmlns="http://www.w3.org/2000/svg"
     >
@@ -146,7 +159,7 @@ const Logo = () => {
               fontFamily="Helvetica-Bold, Helvetica"
               fontSize="72"
               fontWeight="bold"
-              fill="#B6412A"
+              fill="#c5351d"
             >
               <tspan x="874.285086" y="193">
                 METAVERSAL POST OFFICE
@@ -157,7 +170,7 @@ const Logo = () => {
               fontFamily="Helvetica-Bold, Helvetica"
               fontSize="108"
               fontWeight="bold"
-              fill="#B6412A"
+              fill="#c5351d"
             >
               <tspan x="1033.34954" y="326">
                 TELEGRAPH

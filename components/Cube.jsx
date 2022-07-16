@@ -41,7 +41,7 @@ const Square = ({ height, width, x, y, opacity }) => (
         // fill-rule="evenodd"
         opacity={opacity}
       >
-        <g id="Cube/unlit" fill="#B6412A">
+        <g id="Cube/unlit" fill="#c5351d">
           <rect id="Rectangle" x="0" y="0" width="100" height="100" rx="30"></rect>
         </g>
       </g>

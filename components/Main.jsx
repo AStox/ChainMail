@@ -5,6 +5,7 @@ import MintingCard from "./MintingCard";
 import Inbox from "./Inbox";
 import TopBar from "./new-design/TopBar";
 import LogoBar from "./LogoBar";
+import Transmit from "./Transmit";
 
 const Main = () => {
   const [displaySplash, setDisplaySplash] = useState(true);
@@ -81,10 +82,22 @@ const Main = () => {
 
   return (
     <div className="Main">
-      <div className="inbox">
+      <div className="inbox-container">
         <Inbox />
       </div>
-      <div className="outbox"></div>
+      <div className="outbox-container">
+        <div className="box-title">OUT BOX</div>
+        <div className="step">
+          <div className="box-title">1. DRAFT</div>
+          <div className="box-subtitle outbox">DRAFT A TELEGRAM</div>
+        </div>
+        <MintingCard />
+        <div className="step">
+          <div className="box-title">2. TRANSMIT</div>
+          <div className="box-subtitle outbox">SIGN AND SEND YOUR TELEGRAM</div>
+        </div>
+        <Transmit />
+      </div>
     </div>
   );
 };
