@@ -6,6 +6,7 @@ import Inbox from "./Inbox";
 import TopBar from "./new-design/TopBar";
 import LogoBar from "./LogoBar";
 import Transmit from "./Transmit";
+import Status from "./Status";
 
 const Main = () => {
   const [displaySplash, setDisplaySplash] = useState(true);
@@ -97,6 +98,10 @@ const Main = () => {
           <div className="box-subtitle outbox">SIGN AND SEND YOUR TELEGRAM</div>
         </div>
         <Transmit />
+        <div className="status-container">
+          <div className="box-title">STATUS</div>
+          <Status />
+        </div>
       </div>
     </div>
   );
