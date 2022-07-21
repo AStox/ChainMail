@@ -1,5 +1,6 @@
 import React, { useState, useEffect } from "react";
 import { ethers } from "ethers";
+import { useMediaQuery } from "react-responsive";
 
 import MintingCard from "./MintingCard";
 import Inbox from "./Inbox";
@@ -9,7 +10,7 @@ import Transmit from "./Transmit";
 import Status from "./Status";
 
 const Main = () => {
-  const [displaySplash, setDisplaySplash] = useState(true);
+  const isTabletOrMobile = useMediaQuery({ maxWidth: 1550 });
 
   const [address, setAddress] = useState("");
   const [status, setStatus] = useState("");
@@ -82,10 +83,12 @@ const Main = () => {
   }
 
   return (
-    <div className="Main">
-      <div className="inbox-container">
-        <Inbox />
-      </div>
+    <div className="Main" suppressHydrationWarning>
+      {!!!isTabletOrMobile && (
+        <div className="inbox-container">
+          <Inbox />
+        </div>
+      )}
       <div className="outbox-container">
         <div className="box-title">OUT BOX</div>
         <div className="step">
