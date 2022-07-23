@@ -4,8 +4,8 @@ import { useMediaQuery } from "react-responsive";
 
 import MintingCard from "./MintingCard";
 import Inbox from "./Inbox";
-import TopBar from "./new-design/TopBar";
-import LogoBar from "./LogoBar";
+// import TopBar from "./new-design/TopBar";
+// import LogoBar from "./LogoBar";
 import Transmit from "./Transmit";
 import Status from "./Status";
 
