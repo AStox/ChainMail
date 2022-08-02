@@ -57,9 +57,6 @@ const MintingCard = () => {
                       padding: "0vw 0 3vw 0",
                     }}
                   >
-                    <div style={{ flex: "1 1 auto", alignSelf: "end" }}>
-                      <CubeEmpty />
-                    </div>
                     <Input label="ID" placeholder="0x..." setValue={setTo} value={to} />
                     <Input label="FROM" placeholder="0x..." setValue={setTo} value={to} />
                     <Input label="TO" placeholder="0x..." setValue={setTo} value={to} />

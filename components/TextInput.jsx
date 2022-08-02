@@ -54,10 +54,10 @@ const TextInput = ({ value, setValue, setStatusWithTimeout }) => {
         }}
       >
         <div className="line-container">
-          <div className="underline">{">"}</div>
-          <div className="underline">{">"}</div>
-          <div className="underline">{">"}</div>
-          <div className="underline">{">"}</div>
+          <div className="underline" />
+          <div className="underline" />
+          <div className="underline" />
+          <div className="underline" />
         </div>
       </div>
     </div>

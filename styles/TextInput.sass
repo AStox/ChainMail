@@ -1,23 +1,23 @@
 .TextInput
     flex: 1 1 auto
     font-family: monospace
-    margin: 8% 0
     position: relative
+    margin-left: 6px
 
     .muted
         color: #1B3450
 
     textarea
         all: unset
-        // width: 90%
+        position: relative
+        z-index: 1
         font-weight: 700
         color: #149CA5
         text-align: left
-        // margin-left: -5.5rem
         border: none
         cursor: auto
         resize: none
-        line-height: 150%
+        line-height: 120%
         overflow: hidden
         word-wrap: break-word
         word-break: break-all
@@ -26,18 +26,39 @@
         width: 550px
 
     .line-container
-        // position: absolute
-        // width: 95%
-        // top: -5px
         display: block
-        margin: 0 2%
+        margin: 24px 4%
         max-width: 585px
         pointer-events: none
 
     .underline
-        border-bottom: #1B3450 solid 0.1rem
+        border-bottom: #1B3450 solid 6px
         color: #1B3450
         font-weight: 500
         text-align: left
         pointer-events: none
         padding: 9px 0 0 0
+        margin-top: 21.5px
+        position: relative
+        &:before 
+            content:''
+            position: absolute
+            top: 9px
+            left: -6px
+            background-color: #1B3450
+            height: 6px
+            width: 6px
+            border-radius:10px 0 0 10px
+            content: ""
+            display: inline-block
+        &:after 
+            content:''
+            position: absolute
+            top: 9px
+            right: -6px
+            background-color: #1B3450
+            height: 6px
+            width: 6px
+            border-radius:0 10px 10px 0
+            content: ""
+            display: inline-block
