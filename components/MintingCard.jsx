@@ -46,16 +46,6 @@ const MintingCard = () => {
         {showDetails && <Details />}
         {!showDetails && (
           <>
-            {/* <div style={{ display: "flex", justifyContent: "start", margin: "0 1vw" }}>
-              <Status
-                label="Status"
-                disabled={true}
-                placeholder="..."
-                setValue={() => {}}
-                value={mintStatus}
-                className="status"
-              />
-            </div> */}
             <div className="main-content">
               <div style={{ flex: "1 1 auto" }}>
                 <div className="vertical-line">
@@ -70,7 +60,7 @@ const MintingCard = () => {
                     <div style={{ flex: "1 1 auto", alignSelf: "end" }}>
                       <CubeEmpty />
                     </div>
-                    <Input label="TELEGRAPH ID" placeholder="0x..." setValue={setTo} value={to} />
+                    <Input label="ID" placeholder="0x..." setValue={setTo} value={to} />
                     <Input label="FROM" placeholder="0x..." setValue={setTo} value={to} />
                     <Input label="TO" placeholder="0x..." setValue={setTo} value={to} />
                   </div>
@@ -82,15 +72,6 @@ const MintingCard = () => {
                   value={text}
                   setStatusWithTimeout={setStatusWithTimeout}
                 />
-                {/* <MintButton
-                  price={price}
-                  to={to}
-                  text={text}
-                  setMintStatus={setMintStatus}
-                  setText={setText}
-                  setStatusWithTimeout={setStatusWithTimeout}
-                  sentConfirmation={sentConfirmation}
-                /> */}
               </div>
             </div>
           </>

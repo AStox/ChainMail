@@ -1,4 +1,4 @@
-import "../styles/globals.css";
+import "../styles/globals.sass";
 import "../styles/App.sass";
 import "../styles/Main.sass";
 import "../styles/Inbox.sass";

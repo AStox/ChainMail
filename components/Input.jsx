@@ -1,9 +1,11 @@
 // import "./Input.sass";
 
+import InsetText from "./InsetText";
+
 const Input = ({ label, value, setValue, placeholder, className, long, disabled }) => (
   <div className={`Input ${long ? "long" : ""}`}>
     <div className="label">
-      {label}
+      <InsetText height={32} text={label} />
       <div className="underline">
         <input
           type="text"

@@ -8,6 +8,8 @@ import Inbox from "./Inbox";
 // import LogoBar from "./LogoBar";
 import Transmit from "./Transmit";
 import Status from "./Status";
+import InsetText from "./InsetText";
+import RaisedText from "./RaisedText";
 
 const Main = () => {
   const isTabletOrMobile = useMediaQuery({ maxWidth: 1550 });
@@ -90,21 +92,22 @@ const Main = () => {
         </div>
       )}
       <div className="outbox-container">
-        <div className="box-title">OUT BOX</div>
+        <div className="box-title">
+          <RaisedText height={50} width={400} text={"OUT BOX"} />
+          <div className="box-subtitle">START A NEW CONVERSATION OR RESPOND TO AN EXISTING ONE</div>
+        </div>
         <div className="step">
-          <div className="box-title">1. DRAFT</div>
-          <div className="box-subtitle outbox">DRAFT A TELEGRAM</div>
+          <div className="box-title">
+            <RaisedText height={50} width={400} text={"1. DRAFT"} />
+          </div>
         </div>
         <MintingCard />
         <div className="step">
-          <div className="box-title">2. TRANSMIT</div>
-          <div className="box-subtitle outbox">SIGN AND SEND YOUR TELEGRAM</div>
+          <div className="box-title">
+            <RaisedText height={50} width={400} text={"2. SEND"} />
+          </div>
         </div>
         <Transmit />
-        <div className="status-container">
-          <div className="box-title">STATUS</div>
-          <Status />
-        </div>
       </div>
     </div>
   );
