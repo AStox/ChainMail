@@ -4,7 +4,7 @@ import { useEffect, useRef } from "react";
 const TextInput = ({ value, setValue, setStatusWithTimeout }) => {
   const textarea = useRef(null);
   const lineLength = 30;
-  const maxLines = 4;
+  const maxLines = 6;
 
   useEffect(() => {
     if (typeof window == "undefined") {
@@ -21,10 +21,6 @@ const TextInput = ({ value, setValue, setStatusWithTimeout }) => {
     textarea.current.scrollTo(0, 0);
     textarea.current.scrollTop = 0;
   };
-
-  // useEffect(() => {
-  //   console.log();
-  // }, [textarea.current.selectionStart]);
 
   function updateValue(eventValue) {
     setValue(eventValue);
@@ -54,6 +50,8 @@ const TextInput = ({ value, setValue, setStatusWithTimeout }) => {
         }}
       >
         <div className="line-container">
+          <div className="underline" />
+          <div className="underline" />
           <div className="underline" />
           <div className="underline" />
           <div className="underline" />

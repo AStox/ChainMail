@@ -6,7 +6,7 @@ import "../styles/Cubes.sass";
 import "../styles/MintingCard.sass";
 import "../styles/TextInput.sass";
 import "../styles/Input.sass";
-import "../styles/Transmit.sass";
+import "../styles/Send.sass";
 import "../styles/TopBar.sass";
 
 function MyApp({ Component, pageProps }) {

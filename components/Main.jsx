@@ -6,7 +6,7 @@ import MintingCard from "./MintingCard";
 import Inbox from "./Inbox";
 // import TopBar from "./new-design/TopBar";
 // import LogoBar from "./LogoBar";
-import Transmit from "./Transmit";
+import Send from "./Send";
 import Status from "./Status";
 import InsetText from "./InsetText";
 import RaisedText from "./RaisedText";
@@ -107,7 +107,7 @@ const Main = () => {
             <RaisedText height={50} width={400} text={"2. SEND"} />
           </div>
         </div>
-        <Transmit />
+        <Send />
       </div>
     </div>
   );
