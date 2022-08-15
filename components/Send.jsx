@@ -17,6 +17,19 @@ export default function Send() {
           <Outline />
         </div>
       </div>
+      <div className="bottom">
+        <div className="Dot" />
+        <div className="CubeLit odd" />
+        <div className="Dot" />
+        <div className="CubeLit even" />
+        <div className="Dot" />
+        <div className="CubeLit odd" />
+        <div className="Dot" />
+        <div className="CubeLit even" />
+        <div className="Dot" />
+        <div className="CubeLit odd" />
+        <div className="Dot" style={{ alignSelf: "flex-start", marginTop: "30px" }} />
+      </div>
     </div>
   );
 }

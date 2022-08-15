@@ -8,6 +8,7 @@ import "../styles/TextInput.sass";
 import "../styles/Input.sass";
 import "../styles/Send.sass";
 import "../styles/TopBar.sass";
+import "../styles/Arrow.sass";
 
 function MyApp({ Component, pageProps }) {
   return <Component {...pageProps} />;
