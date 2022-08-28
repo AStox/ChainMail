@@ -92,6 +92,10 @@ const Main = () => {
     <div className="Main" suppressHydrationWarning>
       {!!!isTabletOrMobile && (
         <div className="inbox-container">
+          <div className="box-title">
+            <RaisedText height={50} width={270} text={"IN BOX"} />
+            <div className="box-subtitle">YOUR ACTIVE CONVERSATIONS</div>
+          </div>
           <Inbox />
         </div>
       )}

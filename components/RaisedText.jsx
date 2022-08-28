@@ -1,5 +1,6 @@
 const RaisedText = ({ width, height, text }) => {
   height ||= 50;
+  const id = width + "_" + height;
   return (
     <>
       <svg
@@ -8,17 +9,13 @@ const RaisedText = ({ width, height, text }) => {
         viewBox={`0 0 ${width} ${height}`}
         xmlns="http://www.w3.org/2000/svg"
       >
-        <g filter="url(#filter0_ddddii_101_314)">
+        <g filter={`url(#${id})`}>
           <text x="0" y={`${height - height / 10}`} fill="#C5351D" fontSize={`${height}px`}>
             {text}
           </text>
         </g>
         <defs>
-          <filter
-            id="filter0_ddddii_101_314"
-            filterUnits="userSpaceOnUse"
-            colorInterpolationFilters="sRGB"
-          >
+          <filter id={id} filterUnits="userSpaceOnUse" colorInterpolationFilters="sRGB">
             <feFlood floodOpacity="0" result="BackgroundImageFix" />
             <feColorMatrix
               in="SourceAlpha"

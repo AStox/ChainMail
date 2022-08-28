@@ -55,8 +55,6 @@ const Inbox = () => {
   const slots = makeArray();
   return (
     <div className="Inbox">
-      <div className="box-title">IN BOX</div>
-      <div className="box-subtitle">YOUR RECEIVED TELEGRAPHS</div>
       <div className="grid">{slots}</div>
     </div>
   );
