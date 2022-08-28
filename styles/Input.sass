@@ -1,5 +1,5 @@
 .Input
-    flex: 1 1 auto
+    flex: 0 0 auto
     max-width: 600px
     text-align: left
     &.status
@@ -14,16 +14,16 @@
         color: #c5351d
         font-size: 80%
         font-weight: 900
-        letter-spacing: 0.2rem
+
+        svg
+            margin-bottom: -2px
 
     .underline
-        // margin-left: 1rem
-        // max-width: 75%
         display: inline
         &:before 
             content:''
             position: relative
-            top: 11.5px
+            top: 14px
             background-color: #c5351d
             height: 6px
             width: 6px
@@ -33,7 +33,7 @@
         &:after 
             content:''
             position: relative
-            top: 11.5px
+            top: 14px
             background-color: #c5351d
             height: 6px
             width: 6px
@@ -43,8 +43,7 @@
 
         .input
             width: 85%
-            color: #0087A3
-            font-size: 80%
+            color: var(--bright-text)
             font-family: monospace
             font-weight: 700
             border-bottom: #c5351d solid 6px
@@ -52,6 +51,7 @@
             text-shadow: none
             text-overflow: ellipsis
             min-width: 300px
+            font-size: 130%
             
 
             &::placeholder

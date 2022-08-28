@@ -101,11 +101,11 @@ const Main = () => {
           <div className="box-subtitle">START A NEW CONVERSATION OR RESPOND TO AN EXISTING ONE</div>
         </div>
         <div className="draft-container">
-          <div className="draft-top">
-            <Input label="To" labelWidth="50" placeholder="0x..." />
-            <SendButton />
-          </div>
+          {/* <div className="draft-top">
+          </div> */}
+          <Input label="To" labelWidth="50" placeholder="0x..." />
           <TextInput setValue={setText} value={text} />
+          <SendButton />
         </div>
       </div>
     </div>
