@@ -2,6 +2,7 @@
     flex: 0 0 auto
     max-width: 600px
     text-align: left
+    margin-left: 20px
     &.status
         width:100%
         border-bottom: none
@@ -20,10 +21,13 @@
 
     .underline
         display: inline
+        border-bottom: #c5351d solid 6px
+
         &:before 
             content:''
             position: relative
-            top: 14px
+            top: 12px
+            left: -6px
             background-color: #c5351d
             height: 6px
             width: 6px
@@ -33,7 +37,8 @@
         &:after 
             content:''
             position: relative
-            top: 14px
+            top: 12px
+            right: -6px
             background-color: #c5351d
             height: 6px
             width: 6px
@@ -46,12 +51,11 @@
             color: var(--bright-text)
             font-family: monospace
             font-weight: 700
-            border-bottom: #c5351d solid 6px
             text-align: left
             text-shadow: none
             text-overflow: ellipsis
             min-width: 300px
-            font-size: 130%
+            font-size: 110%
             
 
             &::placeholder
