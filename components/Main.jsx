@@ -103,7 +103,7 @@ const Main = () => {
         <div className="draft-container">
           {/* <div className="draft-top">
           </div> */}
-          <Input label="To" labelWidth="50" placeholder="0x..." />
+          <Input label="TO" labelWidth="50" placeholder="0x..." />
           <TextInput setValue={setText} value={text} />
           <SendButton />
         </div>

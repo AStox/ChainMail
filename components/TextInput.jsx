@@ -1,4 +1,5 @@
 import { useEffect, useRef } from "react";
+import InsetText from "./InsetText";
 // import "./TextInput.sass";
 
 const TextInput = ({ value, setValue, setStatusWithTimeout }) => {
@@ -28,6 +29,7 @@ const TextInput = ({ value, setValue, setStatusWithTimeout }) => {
 
   return (
     <div className="TextInput">
+      <InsetText height="25" width="150" text="MESSAGE" />
       <textarea
         ref={textarea}
         type="textarea"
