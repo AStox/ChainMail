@@ -6,16 +6,16 @@ const TextInput = ({ value, setValue, setStatusWithTimeout }) => {
   const lineLength = 30;
   const maxLines = 6;
 
-  useEffect(() => {
-    if (typeof window == "undefined") {
-      return;
-    }
-    window?.addEventListener("keyup", handleUserKeyPress);
+  // useEffect(() => {
+  //   if (typeof window == "undefined") {
+  //     return;
+  //   }
+  //   window?.addEventListener("keyup", handleUserKeyPress);
 
-    return () => {
-      window?.removeEventListener("keyup", handleUserKeyPress);
-    };
-  }, []);
+  //   return () => {
+  //     window?.removeEventListener("keyup", handleUserKeyPress);
+  //   };
+  // }, []);
 
   const handleUserKeyPress = () => {
     textarea.current.scrollTo(0, 0);
@@ -34,21 +34,13 @@ const TextInput = ({ value, setValue, setStatusWithTimeout }) => {
         value={value}
         onChange={(e) => {
           updateValue(e.target.value);
-          setStatusWithTimeout("");
         }}
-        rows={maxLines}
-        cols={lineLength}
-        wrap="hard"
-        maxLength={121}
+        // rows={maxLines}
+        // cols={lineLength}
+        // wrap="hard"
+        // maxLength={121}
       />
-      <div
-        style={{
-          position: "absolute",
-          width: "100%",
-          top: "-5px",
-          pointerEvents: "none",
-        }}
-      >
+      {/* <div className="absolute-container">
         <div className="line-container">
           <div className="underline" />
           <div className="underline" />
@@ -57,7 +49,7 @@ const TextInput = ({ value, setValue, setStatusWithTimeout }) => {
           <div className="underline" />
           <div className="underline" />
         </div>
-      </div>
+      </div> */}
     </div>
   );
 };

@@ -1,5 +1,7 @@
-const InsetText = ({ width, height, text, right }) => {
+const InsetText = ({ width, height, text, textAnchor, colour }) => {
   height ||= 50;
+  colour ||= "#C5351D";
+  const filterId = width + height + text;
   return (
     <>
       <svg
@@ -8,23 +10,19 @@ const InsetText = ({ width, height, text, right }) => {
         viewBox={`0 0 ${width} ${height}`}
         xmlns="http://www.w3.org/2000/svg"
       >
-        <g filter="url(#filter0_ii_101_317)">
+        <g filter={`url(#${filterId})`}>
           <text
-            textAnchor={right ? "end" : "start"}
-            x={width}
+            textAnchor={textAnchor}
+            x={textAnchor == "end" ? width : 0}
             y={`${height - height / 10}`}
-            fill="#C5351D"
+            fill={colour}
             fontSize={`${height}px`}
           >
             {text}
           </text>
         </g>
         <defs>
-          <filter
-            id="filter0_ii_101_317"
-            filterUnits="userSpaceOnUse"
-            colorInterpolationFilters="sRGB"
-          >
+          <filter id={filterId} filterUnits="userSpaceOnUse" colorInterpolationFilters="sRGB">
             <feFlood floodOpacity="0" result="BackgroundImageFix" />
             <feBlend mode="normal" in="SourceGraphic" in2="BackgroundImageFix" result="shape" />
             <feColorMatrix

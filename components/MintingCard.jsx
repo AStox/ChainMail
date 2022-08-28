@@ -4,7 +4,6 @@ import Header from "./Header";
 import Stamp from "./Stamp";
 import Input from "./Input";
 import TextInput from "./TextInput";
-import MintButton from "./buttons/MintButton";
 import DetailsButton from "./buttons/DetailsButton";
 import ConnectButton from "./buttons/ConnectButton";
 import Details from "./Details";

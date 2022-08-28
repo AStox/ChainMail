@@ -1,29 +1,36 @@
 .TextInput
     flex: 1 1 auto
-    font-family: monospace
-    position: relative
-    margin-left: 6px
+    // position: relative
+    // margin-left: 6px
 
     .muted
-        color: #1B3450
+        color: var(--muted)
 
     textarea
         all: unset
-        position: relative
+        box-sizing: border-box
         z-index: 1
         font-weight: 700
-        color: #149CA5
+        color: var(--bright-text)
         text-align: left
+        font-family: monospace
         border: none
         cursor: auto
         resize: none
         line-height: 37.5px
         overflow: hidden
-        word-wrap: break-word
-        word-break: break-all
-        display: block
-        margin: 0 auto 0 calc(1vw + 20px)
-        width: 550px
+        padding: 10px
+        border: 6px solid var(--bright)
+        border-radius: 25px
+        width: 100%
+        height: 100%
+        box-shadow: inset 15px 15px 20px rgba(0,0,0,0.5), inset -15px -15px 20px rgba(255,255,255,0.05)
+
+    .absolute-container
+        position: absolute
+        width: 100%
+        // top: -5px
+        pointer-events: none
 
     .line-container
         display: block
@@ -32,8 +39,8 @@
         pointer-events: none
 
     .underline
-        border-bottom: #1B3450 solid 6px
-        color: #1B3450
+        border-bottom: var(--muted) solid 6px
+        color: var(--muted)
         font-weight: 500
         text-align: left
         pointer-events: none
@@ -45,7 +52,7 @@
             position: absolute
             top: 9px
             left: -6px
-            background-color: #1B3450
+            background-color: var(--muted)
             height: 6px
             width: 6px
             border-radius:10px 0 0 10px
@@ -56,7 +63,7 @@
             position: absolute
             top: 9px
             right: -6px
-            background-color: #1B3450
+            background-color: var(--muted)
             height: 6px
             width: 6px
             border-radius:0 10px 10px 0

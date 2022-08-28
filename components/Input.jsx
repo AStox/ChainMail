@@ -2,10 +2,10 @@
 
 import InsetText from "./InsetText";
 
-const Input = ({ label, value, setValue, placeholder, className, long, disabled }) => (
-  <div className={`Input ${long ? "long" : ""}`}>
+const Input = ({ label, labelWidth, value, setValue, placeholder, className, disabled }) => (
+  <div className="Input">
     <div className="label">
-      <InsetText height={25} width={110} right text={label} />
+      <InsetText height={25} width={labelWidth} textAnchor="end" text={label} />
       <div className="underline">
         <input
           type="text"

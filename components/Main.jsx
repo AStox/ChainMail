@@ -10,12 +10,16 @@ import Send from "./Send";
 import Status from "./Status";
 import InsetText from "./InsetText";
 import RaisedText from "./RaisedText";
+import TextInput from "./TextInput";
+import SendButton from "./SendButton";
+import Input from "./Input";
 
 const Main = () => {
   const isTabletOrMobile = useMediaQuery({ maxWidth: 1550 });
 
   const [address, setAddress] = useState("");
   const [status, setStatus] = useState("");
+  const [text, setText] = useState("");
   // const MPOAddress = "0x113d32584D5B95365669b3dd423f3A3e73aBf3eD";
   // let MPOContract;
   let provider;
@@ -96,18 +100,13 @@ const Main = () => {
           <RaisedText height={50} width={400} text={"OUT BOX"} />
           <div className="box-subtitle">START A NEW CONVERSATION OR RESPOND TO AN EXISTING ONE</div>
         </div>
-        <div className="step">
-          <div className="box-title">
-            <RaisedText height={50} width={400} text={"1. DRAFT"} />
+        <div className="draft-container">
+          <div className="draft-top">
+            <Input label="To" labelWidth="50" placeholder="0x..." />
+            <SendButton />
           </div>
+          <TextInput setValue={setText} value={text} />
         </div>
-        <MintingCard />
-        <div className="step">
-          <div className="box-title">
-            <RaisedText height={50} width={400} text={"2. SEND"} />
-          </div>
-        </div>
-        <Send />
       </div>
     </div>
   );

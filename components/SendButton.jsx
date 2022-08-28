@@ -1,9 +1,9 @@
-// import "../buttons/MintButton.sass";
 import React, { useEffect, useState } from "react";
 import { ethers } from "ethers";
-import MPOAbi from "../../ABIs/MPO";
+import MPOAbi from "../ABIs/MPO";
+import InsetText from "./InsetText";
 
-const MintButton = ({ price, to, text, setMintStatus, sentConfirmation }) => {
+const SendButton = ({ price, to, text, setMintStatus, sentConfirmation }) => {
   const MPOAddress = "0x3d7e5ee442051b6b4536ee09613cc913b4cfc943";
   const [provider, setProvider] = useState();
   const [MPOContract, setMPOContract] = useState();
@@ -16,7 +16,7 @@ const MintButton = ({ price, to, text, setMintStatus, sentConfirmation }) => {
       const _MPOContract = new ethers.Contract(MPOAddress, MPOAbi, signer);
       setMPOContract(_MPOContract);
     }
-  }, [window?.ethereum]);
+  }, []);
 
   // function getTransactionReceiptMined(txHash, interval) {
   //   const transactionReceiptAsync = function (resolve, reject) {
@@ -94,14 +94,12 @@ const MintButton = ({ price, to, text, setMintStatus, sentConfirmation }) => {
   };
 
   return (
-    <div className="MintButton glow text-glow">
-      {window?.ethereum && (
-        <button onClick={mint} className="glow">
-          <p>TRANSMIT</p>
-        </button>
-      )}
+    <div className="SendButton">
+      <button onClick={mint}>
+        <InsetText width="90" height="30" text="SEND" colour="#0e1826" />
+      </button>
     </div>
   );
 };
 
-export default MintButton;
+export default SendButton;

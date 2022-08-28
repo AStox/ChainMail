@@ -1,4 +1,6 @@
 .Input
+    flex: 1 1 auto
+    max-width: 600px
     text-align: left
     &.status
         width:100%
@@ -11,12 +13,11 @@
     .label
         color: #c5351d
         font-size: 80%
-        text-align: right
         font-weight: 900
         letter-spacing: 0.2rem
 
     .underline
-        margin-left: 1rem
+        // margin-left: 1rem
         // max-width: 75%
         display: inline
         &:before 
@@ -41,15 +42,14 @@
             display: inline-block
 
         .input
+            width: 85%
             color: #0087A3
             font-size: 80%
             font-family: monospace
             font-weight: 700
             border-bottom: #c5351d solid 6px
             text-align: left
-            cursor: auto
             text-shadow: none
-            // overflow: hidden
             text-overflow: ellipsis
             min-width: 300px
             
