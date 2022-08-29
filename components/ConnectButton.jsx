@@ -79,8 +79,13 @@ const ConnectButton = () => {
   return (
     <>
       <div className="ConnectButton">
-        <button onClick={() => getProvider()}>
-          <RaisedText text={address.length > 0 ? address : "CONNECT"} height="25" width="170" />{" "}
+        <button onClick={() => getProvider()} style={{ overflow: "visible" }}>
+          <RaisedText
+            text={address.length > 0 ? address.slice(0, 6) + "..." + address.slice(-4) : "CONNECT"}
+            height="25"
+            width="500"
+            textAnchor="end"
+          />{" "}
         </button>
         {connected && (
           <button onClick={() => getProvider()}>

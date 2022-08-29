@@ -1,16 +1,23 @@
-const RaisedText = ({ width, height, text }) => {
+const RaisedText = ({ width, height, text, textAnchor }) => {
   height ||= 50;
   const id = width + "_" + height;
   return (
     <>
       <svg
+        style={{ overflow: "visible", textOverflow: "ellipsis" }}
         width={width}
         height={height}
         viewBox={`0 0 ${width} ${height}`}
         xmlns="http://www.w3.org/2000/svg"
       >
         <g filter={`url(#${id})`}>
-          <text x="0" y={`${height - height / 10}`} fill="#C5351D" fontSize={`${height}px`}>
+          <text
+            x={textAnchor == "end" ? width : 0}
+            y={`${height - height / 10}`}
+            fill="#C5351D"
+            fontSize={`${height}px`}
+            textAnchor={textAnchor}
+          >
             {text}
           </text>
         </g>
