@@ -4,7 +4,8 @@ import MPOAbi from "../ABIs/MPO";
 import InsetText from "./InsetText";
 
 const SendButton = ({ price, to, text, setMintStatus, sentConfirmation }) => {
-  const MPOAddress = "0x3d7e5ee442051b6b4536ee09613cc913b4cfc943";
+  const MPOAddress = process.env.NEXT_PUBLIC_CONTRACT_ADDRESS;
+  console.log(MPOAddress);
   const [provider, setProvider] = useState();
   const [MPOContract, setMPOContract] = useState();
 

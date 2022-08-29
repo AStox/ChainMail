@@ -1,6 +1,11 @@
 import React from "react";
-import Logo from "./Logo";
+import ConnectButton from "./ConnectButton";
 
-const TopBar = () => <div className="TopBar"></div>;
+const TopBar = () => (
+  <div className="TopBar">
+    <div className="social-links"></div>
+    <ConnectButton />
+  </div>
+);
 
 export default TopBar;

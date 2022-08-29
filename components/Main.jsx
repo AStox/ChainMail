@@ -15,52 +15,50 @@ import SendButton from "./SendButton";
 import Input from "./Input";
 
 const Main = () => {
-  const isTabletOrMobile = useMediaQuery({ maxWidth: 1550 });
+  // const isTabletOrMobile = useMediaQuery({ maxWidth: 1550 });
 
   const [address, setAddress] = useState("");
   const [status, setStatus] = useState("");
   const [text, setText] = useState("");
   // const MPOAddress = "0x113d32584D5B95365669b3dd423f3A3e73aBf3eD";
   // let MPOContract;
-  let provider;
+  // let provider;
 
-  useEffect(() => {
-    if (window !== undefined) {
-      if (window?.ethereum) {
-        provider = new ethers.providers.Web3Provider(window?.ethereum);
-      }
-    }
-  }, []);
+  // useEffect(() => {
+  //   if (window?.ethereum) {
+  //     provider = new ethers.providers.Web3Provider(window?.ethereum);
+  //   }
+  // }, []);
 
-  useEffect(() => {
-    if (window?.ethereum) {
-      window?.ethereum.on("connect", () => {
-        provider
-          .listAccounts()
-          .then((result) => {
-            if (result.length > 0) {
-              connectAccount();
-            }
-          })
-          .catch((error) => console.log(error));
-      });
-      window?.ethereum.on("accountsChanged", (accounts) => {
-        provider
-          .listAccounts()
-          .then((result) => {
-            if (result.length > 0) {
-              connectAccount();
-            } else {
-              setAddress("");
-            }
-          })
-          .catch((error) => console.log(error));
-      });
-      window?.ethereum.on("disconnect", () => {
-        setAddress("");
-      });
-    }
-  }, []);
+  // useEffect(() => {
+  //   if (window?.ethereum) {
+  //     window?.ethereum.on("connect", () => {
+  //       provider
+  //         .listAccounts()
+  //         .then((result) => {
+  //           if (result.length > 0) {
+  //             connectAccount();
+  //           }
+  //         })
+  //         .catch((error) => console.log(error));
+  //     });
+  //     window?.ethereum.on("accountsChanged", (accounts) => {
+  //       provider
+  //         .listAccounts()
+  //         .then((result) => {
+  //           if (result.length > 0) {
+  //             connectAccount();
+  //           } else {
+  //             setAddress("");
+  //           }
+  //         })
+  //         .catch((error) => console.log(error));
+  //     });
+  //     window?.ethereum.on("disconnect", () => {
+  //       setAddress("");
+  //     });
+  //   }
+  // }, []);
 
   // async function getENS(address) {
   //   const ens = new ENS({
@@ -71,34 +69,35 @@ const Main = () => {
   //   return result.name;
   // }
 
-  async function getProvider() {
-    if (provider) {
-      console.log("Ethereum successfully detected!");
-      connectAccount();
-    } else {
-      console.error("Please install MetaMask!");
-      setStatus("NO WALLET PROVIDER DETECTED");
-      // TODO: Set "No wallet provider detected" status here!
-    }
-  }
+  // async function getProvider() {
+  //   if (provider) {
+  //     console.log("Ethereum successfully detected!");
+  //     connectAccount();
+  //   } else {
+  //     console.error("Please install MetaMask!");
+  //     setStatus("NO WALLET PROVIDER DETECTED");
+  //     // TODO: Set "No wallet provider detected" status here!
+  //   }
+  // }
 
-  async function connectAccount() {
-    const ret = await provider.send("eth_requestAccounts", []);
-    const account = ret.result ? ret.result[0] : ret[0];
-    // setAddress((await getENS(account)) || account);
-  }
+  // async function connectAccount() {
+  //   const ret = await provider.send("eth_requestAccounts", []);
+  //   const account = ret.result ? ret.result[0] : ret[0];
+  //   // setAddress((await getENS(account)) || account);
+  // }
 
   return (
-    <div className="Main" suppressHydrationWarning>
-      {!!!isTabletOrMobile && (
-        <div className="inbox-container">
-          <div className="box-title">
-            <RaisedText height={50} width={270} text={"IN BOX"} />
-            <div className="box-subtitle">YOUR ACTIVE CONVERSATIONS</div>
-          </div>
-          <Inbox />
+    // <div className="Main" suppressHydrationWarning>
+    <div className="Main">
+      {/* {!!!isTabletOrMobile && ( */}
+      <div className="inbox-container">
+        <div className="box-title">
+          <RaisedText height={50} width={270} text={"IN BOX"} />
+          <div className="box-subtitle">YOUR ACTIVE CONVERSATIONS</div>
         </div>
-      )}
+        <Inbox />
+      </div>
+      {/*  )} */}
       <div className="outbox-container">
         <div className="box-title">
           <RaisedText height={50} width={400} text={"OUT BOX"} />

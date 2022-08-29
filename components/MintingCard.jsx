@@ -5,7 +5,7 @@ import Stamp from "./Stamp";
 import Input from "./Input";
 import TextInput from "./TextInput";
 import DetailsButton from "./buttons/DetailsButton";
-import ConnectButton from "./buttons/ConnectButton";
+import ConnectButton from "./ConnectButton";
 import Details from "./Details";
 import Status from "./Status";
 
