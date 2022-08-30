@@ -4,7 +4,7 @@ const RaisedText = ({ width, height, text, textAnchor }) => {
   return (
     <>
       <svg
-        style={{ overflow: "visible", textOverflow: "ellipsis" }}
+        style={{ overflow: "visible" }}
         width={width}
         height={height}
         viewBox={`0 0 ${width} ${height}`}

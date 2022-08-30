@@ -3,7 +3,7 @@ import { ethers } from "ethers";
 import MPOAbi from "../ABIs/MPO";
 import InsetText from "./InsetText";
 
-const SendButton = ({ price, to, text, setMintStatus, sentConfirmation }) => {
+const SendButton = ({ price, to, text, sentConfirmation }) => {
   const MPOAddress = process.env.NEXT_PUBLIC_CONTRACT_ADDRESS;
   console.log(MPOAddress);
   const [provider, setProvider] = useState();
@@ -36,7 +36,6 @@ const SendButton = ({ price, to, text, setMintStatus, sentConfirmation }) => {
 
   const mint = () => {
     const id = Math.ceil(Math.random() * (2 ** 53 - 1));
-    setMintStatus("Thinking...");
     const mintTx = MPOContract.mint(id, to, text, {
       gasLimit: 52000 + 30 * text.length,
       value: ethers.utils.parseUnits(price.toString(), "ether"),
@@ -44,7 +43,6 @@ const SendButton = ({ price, to, text, setMintStatus, sentConfirmation }) => {
     mintTx.then((res, err) => {
       if (!err) {
         console.log(res);
-        setMintStatus("Transmitting...");
         res.wait().then((res) => {
           console.log(res);
           sentConfirmation();

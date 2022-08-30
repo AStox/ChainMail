@@ -1,25 +1,13 @@
-import React, { useState, useEffect } from "react";
-import { ethers } from "ethers";
-import { useMediaQuery } from "react-responsive";
-
-import MintingCard from "./MintingCard";
+import React, { useState } from "react";
 import Inbox from "./Inbox";
-// import TopBar from "./new-design/TopBar";
-// import LogoBar from "./LogoBar";
-import Send from "./Send";
-import Status from "./Status";
-import InsetText from "./InsetText";
 import RaisedText from "./RaisedText";
 import TextInput from "./TextInput";
 import SendButton from "./SendButton";
 import Input from "./Input";
 
 const Main = () => {
-  // const isTabletOrMobile = useMediaQuery({ maxWidth: 1550 });
-
-  const [address, setAddress] = useState("");
-  const [status, setStatus] = useState("");
   const [text, setText] = useState("");
+  const [to, setTo] = useState("");
   // const MPOAddress = "0x113d32584D5B95365669b3dd423f3A3e73aBf3eD";
   // let MPOContract;
   // let provider;
@@ -104,11 +92,9 @@ const Main = () => {
           <div className="box-subtitle">START A NEW CONVERSATION OR RESPOND TO AN EXISTING ONE</div>
         </div>
         <div className="draft-container">
-          {/* <div className="draft-top">
-          </div> */}
-          <Input label="TO" labelWidth="50" placeholder="0x..." />
+          <Input setValue={setTo} value={to} label="TO" labelWidth="50" placeholder="0x..." />
           <TextInput setValue={setText} value={text} />
-          <SendButton />
+          <SendButton price={0.001} to={to} text={text} />
         </div>
       </div>
     </div>

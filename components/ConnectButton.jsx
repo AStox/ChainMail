@@ -83,15 +83,10 @@ const ConnectButton = () => {
           <RaisedText
             text={address.length > 0 ? address.slice(0, 6) + "..." + address.slice(-4) : "CONNECT"}
             height="25"
-            width="500"
+            width="180"
             textAnchor="end"
           />{" "}
         </button>
-        {connected && (
-          <button onClick={() => getProvider()}>
-            <RaisedText text="CONNECTED" height="25" width="190" />{" "}
-          </button>
-        )}
       </div>
       {!provider && "No wallet provider detected"}
     </>
