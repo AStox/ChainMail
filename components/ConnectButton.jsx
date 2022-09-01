@@ -47,7 +47,7 @@ const ConnectButton = () => {
         setAddress("");
       });
     }
-  }, []);
+  }, [connectAccount, provider]);
 
   async function getENS(address) {
     const ens = new ENS({

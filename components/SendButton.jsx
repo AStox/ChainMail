@@ -17,7 +17,7 @@ const SendButton = ({ price, to, text, sentConfirmation }) => {
       const _MPOContract = new ethers.Contract(MPOAddress, MPOAbi, signer);
       setMPOContract(_MPOContract);
     }
-  }, []);
+  }, [MPOAddress]);
 
   // function getTransactionReceiptMined(txHash, interval) {
   //   const transactionReceiptAsync = function (resolve, reject) {

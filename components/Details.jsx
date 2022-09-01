@@ -5,7 +5,7 @@ const Details = () => {
     <div className="Details">
       <p>
         <p className="strong">The non-fungible telegraph</p>
-        Transmitting a message via the Metaversal Post Office's Telegraph mints a dynamically
+        Transmitting a message via the Metaversal Post Office&apos;s Telegraph mints a dynamically
         generated SVG telegram to the wallet of your choosing.
       </p>
       <p>
