@@ -1,5 +1,5 @@
-#Chain Mail 💌
-##What's Chain Mail?
+# Chain Mail 💌
+## What's Chain Mail?
 It's a super cool ERC-721, wallet-to-wallet messaging service on Ethereum, but instead of just texts, you're sending dynamically generated SVGs for dirt cheap.
 
 How's it Different?
